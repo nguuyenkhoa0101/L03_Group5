@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link Boostrap 4 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css" integrity="sha512-C8Movfk6DU/H5PzarG0+Dv9MA9IZzvmQpO/3cIlGIflmtY3vIud07myMu4M/NTPJl8jmZtt/4mC9bAioMZBBdA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product_style.css">
+    <title>Ivy-Project</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a class="navbar-brand" href="#"><img style="width: 100px; height: auto;" src="./images/logoIVY.png" alt=""></a>
+        </div>
+        <div class="menu">
+            <li><a href="">Nữ</a>
+                <ul class="sub-menu">
+                    <li><a href="">Hàng mới về</a></li>
+                    <li><a href="">Collectiion</a></li>
+                    <li><a href="">Áo</a>
+                        <ul>
+                            <li>
+                                <a href="">Áo sơ mi</a>
+                            </li>
+                            <li><a href="">
+                                            Áo thun
+                                        </a></li>
+                            <li><a href="">Áo Vest</a></li>
+                            <li>
+                                <a href="">Áo khoác</a></li>
+                            <li><a href="">Áo len</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Quần</a>
+                        <ul>
+                            <li><a href="">Quần jean</a></li>
+                            <li><a href="">Quần lửng</a></li>
+                            <li><a href="">Quần dài</a></li>
+
+
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">NAM</a>
+            </li>
+            <li>
+                <a href="">TRẺ EM</a>
+            </li>
+            <li>
+                <a href="">FLASH SALE</a>
+            </li>
+            <li>
+                <a href="">HOT ITEM</a>
+            </li>
+            <li>
+                <a href="">BỘ SƯU TẬP</a>
+            </li>
+            <li>
+                <a href="">TIN TỨC</a>
+            </li>
+            <li>
+                <a href="">THÔNG TIN</a>
+            </li>
+        </div>
+
+        <div class="others">
+            <li><input placeholder="Tìm kiếm" type="text"><i class="fas fa-search"></i></li>
+            <li>
+                <a class="fa fa-pow" href=""></a>
+            </li>
+            <li>
+                <a class="fas fa-user-secret" href=""></a>
+            </li>
+            <li>
+                <a class="fas fa-shopping-cart" href=""></a>
+            </li>
+        </div>
+
+    </header>
+    <!-- Product -->
+    <section class="product">
+        <div class="container">
+            <div class="product-top row">
+                <p>Trang chủ</p> <span>&#10230;</span>
+                <p>Nữ</p> <span>&#10230;</span>
+                <p>Tên sản phẩm</p>
+            </div>
+
+            <div class="product-content">
+                <div class="product-content-left">
+                    <div class="product-content-left-big-img">
+                        <img id="fullImage" src="./images/Product/ao_so_mi_1.jpg" alt="">
+                    </div>
+                    <div class="product-content-left-small-img">
+                        <img src="./images/Product/ao_so_mi_1.jpg" onclick="changeImage(this)" alt="">
+                        <img src="./images/Product/ao_so_mi_3.jpg" onclick="changeImage(this)" alt="">
+                        <img src="./images/Product/ao_so_mi_4.jpg" onclick="changeImage(this)" alt="">
+                        <img src="./images/Product/ao_so_mi_6.jpg" onclick="changeImage(this)" alt="">
+ 
+                    </div>
+                </div>
+
+                <div class="product-content-right">
+                    <div class="product-name">
+                        <h1>Áo sơ mi lụa cổ trụ phối bèo</h1>
+                        <p>SKU: 17M8552</p>
+                    </div>
+
+                    <div class="product-price">
+                        <p>1.150.000đ</p>
+                    </div>
+
+                    <div class="product-color">
+                        <p><span>Màu sắc</span>: Trắng </span></p> 
+                        <div class="product-color-img">
+                            <img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="">
+                            <img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="product-size">
+                            <span class="size-button">S</span>
+                            <span class="size-button">M</span>
+                            <span class="size-button">L</span>
+                            <span class="size-button">XL</span>
+                            <span class="size-button">XXL</span>
+                    </div>
+
+                    <div class="product-quantity">
+                        <p style="font-weight: bold;">Số lượng</p>
+                        <div class="quantity-input">
+                            <span class="minus" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">-</span>
+                            <span class="num" style="width: 40px;">01</span>
+                            <span class="plus" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">+</span>
+                        </div> 
+                    </div>
+
+                    <div class="product-purchase-button">
+                        <div class="buy">
+                            <button>THÊM VÀO GIỎ HÀNG</button>
+                        </div>
+                        
+                        <div class="add-to-cart">
+                            <button>MUA HÀNG</button>
+                        </div>
+                        <a href="#">Tìm tại cửa hàng</a>
+                    </div>
+                    
+                    <div class="product-detail">
+                        <div class="show-more">
+                            <!-- <img src="https://ivymoda.com/assets/images/image-down.png" alt=""> -->
+                           THÔNG TIN SẢN PHẨM 
+                        </div>
+
+                        <div class="product-detail-container activeB">
+                            <div class="product-tab-box">
+                                <button class = "product-tab-btn active">Giới thiệu</button>
+                                <button class = "product-tab-btn">Chi tiết</button>
+                                <button class = "product-tab-btn">Bảo quản</button>
+                                <div class="line"></div>
+                            </div>
+
+                            <div class="product-content-box">
+                                <div class="product-tab-content active">
+                                    <p>Áo sơ mi cổ trụ, thiết kế phối bèo tiểu thư phù hợp cho các nàng công sở yêu thích kiểu nữ tính dịu dàng. </p>
+                                    <br>
+                                    <p>Tay áo dài, có xếp ly nhỏ tạo độ bồng nhẹ. Viền cổ tay nhỏ, đính khuy kim loại cố định, mang đến sự thanh thoát, khá tinh tế.</p>
+                                    <br>
+                                    <p>Áo lựa chọn chất liệu lụa mềm mại, mặc nhẹ và thoải mái. Bạn hãy mix áo cùng quần Tây, chân váy...để có ngay một Outfit thời thượng khi đi làm hay đi gặp mặt bạn bè. </p>
+                                    <br>
+                                    <p style="font-weight: bold;">Thông tin mẫu</p>
+                                    <br>
+                                    <p><span style="font-weight: bold;">Chiều cao</span>: 167 cm</p>
+                                    <br>
+                                    <p><span style="font-weight: bold;">Cân nặng</span>: 50 kg</p>
+                                    <br>
+                                    <p><span style="font-weight: bold;">Số đo ba vòng</span>: 83-65-93 cm</p>
+                                    <br>
+                                    <p>Mẫu mặc size M Lưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.</p>
+                                </div>          
+                                
+                                <div class="product-tab-content">
+                                    <p><span style="font-weight: bold;">Dòng sản phẩm</span>: Ladies</p>
+                                    <br>
+                                    <p><span style="font-weight: bold;">Nhóm sản phẩm</span>: Áo</p>
+                                    <br>
+                                    <p><span style="font-weight: bold;">Cổ áo</span>: Cổ khoác</p>
+                                    <br>
+                                </div>
+
+                                <div class="product-tab-content">
+                                    <p>Chi tiết bảo quản sản phẩm:</p>
+                                    <br>
+                                    <p style="font-weight: bold;">* Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.</p>
+                                    <br>
+                                    <p>* Vải dệt kim: sau khi giặt sản phẩm phải được phơi ngang tránh bai giãn.</p>
+                                    <br>
+                                    <p>* Vải voan, lụa, chiffon nên giặt bằng tay.</p>
+                                    <br>
+                                    <p>* Vải thô, tuytsi, kaki không có phối hay trang trí đá cườm thì có thể giặt máy.</p>
+                                    <br>
+                                    <p>* Vải thô, tuytsi, kaki có phối màu tương phản hay trang trí voan, lụa, đá cườm thì cần giặt tay.</p>
+                                    <br>
+                                    <p>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans. Nếu giặt thì nên lộn trái sản phẩm khi giặt, đóng khuy, kéo khóa, không nên giặt chung cùng đồ sáng màu, tránh dính màu vào các sản phẩm khác. </p>
+                                    <br>
+                                    <p>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu, phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh, nên giặt cùng xà phòng pha loãng.</p>
+                                    <br>
+                                    <p>* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ, vắt mức trung bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi giặt.</p>
+                                    <br>
+                                    <p>* Nên phơi sản phẩm tại chỗ thoáng mát, tránh ánh nắng trực tiếp sẽ dễ bị phai bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm gió sẽ giữ màu vải tốt hơn.</p>
+                                    <br>
+                                    <p>* Những chất vải 100% cotton, không nên phơi sản phẩm bằng mắc áo mà nên vắt ngang sản phẩm lên dây phơi để tránh tình trạng rạn vải.</p>
+                                    <br>
+                                    <p>* Khi ủi sản phẩm bằng bàn là và sử dụng chế độ hơi nước sẽ làm cho sản phẩm dễ ủi phẳng, mát và không bị cháy, giữ màu sản phẩm được đẹp và bền lâu hơn. Nhiệt độ của bàn là tùy theo từng loại vải. </p>
+                                    <br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+    </section>
+
+    <!-- Related products -->
+    <section class="realated-products">
+        <div class="title">
+            <h1>Sản phẩm tương tự</h1>
+        </div>
+        <div class="realated-products-container row">
+            <div class="realated-products-item">
+                <img src="./images/Nu_aoBochun.jpg" alt="">
+                <p style="font-weight: bold;">Áo Lụa Tay Bo Chun</p>
+                <p>950.000<sup>đ</sup></p>
+            </div>
+            <div class="realated-products-item">
+                <img src="./images/Nu_aohaiday.jpg" alt="">
+                <p style="font-weight: bold;">Áo Hai Dây Chiffron</p>
+                <p>425.000<sup>đ</sup></p>
+            </div>
+            <div class="realated-products-item">
+                <img src="./images/Nu_aocongso.jpg" alt="">
+                <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
+                <p>1.190.000<sup>đ</sup></p>
+            </div>
+            <div class="realated-products-item">
+                <img src="./images/Nu_aorutday.jpg" alt="">
+                <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
+                <p>1.190.000<sup>đ</sup></p>
+            </div>
+            <div class="realated-products-item">
+                <img src="./images/Nu_aocroptop.jpg" alt="">
+                <p style="font-weight: bold;">Áo Sơ Mi Rút Dây</p>
+                <p>1.090.000<sup>đ</sup></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <li>
+                <a href=""><img src="./images/dathongbao.png" alt=""></a>
+            </li>
+            <li>
+                <a href="">Liên hệ</a>
+            </li>
+            <li>
+                <a href="">Tuyển dụng</a>
+            </li>
+            <li>
+                <a href="">Giới thiệu</a>
+            </li>
+            <li>
+                <a href="" class="fab fa-facebook">
+                </a>
+                <a href="" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-youtube"></a>
+            </li>
+        </div>
+        <div class="footer-center">
+            <p>
+                Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650 <br> Địa chỉ đăng ký: Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam - 0243 205 2222 <br>Đặt hàng online: <b> 090 589 8683</b>
+            </p>
+        </div>
+
+        <div class="footer-bottom">©IVYmoda All rights reserved</div>
+    </footer>
+
+</body>
+<script>
+    const header = document.querySelector("header")
+    window.addEventListener("scroll", function() {
+        x = window.pageYOffset
+            // console.log(x)
+        if (x > 0) {
+            header.classList.add("sticky")
+        } else {
+            header.classList.remove.add("sticky")
+        }
+
+    })
+</script>
+<script>
+    const item_sliderbar = document.querySelectorAll(".cartegory-left-li")
+    item_sliderbar.forEach(function(menu, index) {
+        menu.addEventListener("click", function() {
+
+            menu.classList.toggle("block")
+
+        })
+
+    })
+</script>
+<!-- Change image -->
+<script>
+    changeImage = (smallImg) => {
+        bigImage = document.getElementById("fullImage")
+        bigImage.src = smallImg.src
+    }
+</script>
+
+<!-- Change quantity -->
+
+<script>
+    const plus = document.querySelector(".plus"),
+    num = document.querySelector(".num"),
+    minus = document.querySelector(".minus")
+
+    let a = 1    
+
+    plus.addEventListener("click", () => {
+        a++
+        a = (a < 10) ? '0' + a : a
+        num.innerHTML = a
+    })
+
+    minus.addEventListener("click", () => {
+        if(a > 1)
+        {
+            a--
+            a = (a < 10) ? '0' + a : a
+            num.innerHTML = a
+        }
+    })
+</script>
+
+<!-- Choosing size -->
+<script>
+    const sizes = document.querySelectorAll('.size-button')
+    sizes.forEach((size) => {
+        size.addEventListener('click', (event) => {
+            sizes.forEach(size => {size.classList.remove('active')})
+            size.classList.add('active')
+        })
+    })
+</script>
+
+<!-- Tab product detail -->
+<script>
+    const tabs= document.querySelectorAll('.product-tab-btn')
+    const all_content= document.querySelectorAll('.product-tab-content')
+    tabs.forEach((tab, index)=>{
+        tab.addEventListener('click', (event)=>{
+            tabs.forEach(tab=>{tab.classList.remove('active')})
+            tab.classList.add('active')
+
+            var line = document.querySelector('.line')
+            line.style.width = event.target.offsetWidth + "px"
+            line.style.left = event.target.offsetLeft + "px"
+            
+            all_content.forEach(content => {content.classList.remove('active')})
+            all_content[index].classList.add('active')
+        })
+
+        
+    })
+
+    const button = document.querySelector(".show-more")
+    if(button)
+    {
+        button.addEventListener("click", function() {
+            document.querySelector(".product-detail-container").classList.toggle("activeB")
+        })
+    }
+    
+</script>
+
+
+</html>
