@@ -252,22 +252,23 @@
     display: none;
 }
 
-.realated-products h1{
+.related-products h1{
     text-align: center;
     font-size: 38px;
     margin-top: 50px;
 }
 
-.realated-products-container {
+.related-products-container {
     margin: 30px 100px 100px 100px;
 }
 
-.realated-products-container .realated-products-item {
+.related-products-container .related-products-item {
     width: calc(20%);
     text-align: center;
     padding: 0 6px;
+    cursor: pointer;
 }
 
-.realated-products-container .realated-products-item img {
+.related-products-container .related-products-item img {
     width: 100%;
 }
