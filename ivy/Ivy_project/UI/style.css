@@ -155,6 +155,128 @@ header:hover {
     top: 5px;
 }
 
+
+
+.icon-cart {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-cart span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+
+.cart-tab {
+    width: 350px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -350px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    z-index: 10;
+    transition: .3s;
+}
+
+.cart-tab.active {
+    right: 0;
+}
+
+.cart-tab-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-tab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cart-tab-top .close {
+    height: 25px;
+    width: 25px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    background-color: #353432;
+    border: none;
+}
+
+.cart-tab .btn {
+    display: flex;
+    justify-content: center;
+}
+.cart-tab .check-out {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    height: 50px;
+    width: 70%;
+    cursor: pointer;
+    border: none;
+}
+
+.cart-tab .check-out:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.list-cart {
+    overflow: auto;
+}
+
+.list-cart .item img {
+    width: 60px;
+}
+
+.list-cart .item {
+    display: grid;
+    grid-template-columns: 70px 90px 70px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.list-cart .quantity span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.list-cart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+
+}
+
+.list-cart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+
+.list-cart::-webkit-scrollbar {
+    width: 0;
+}
+
 #Silder {
     padding-bottom: 30px;
     border-bottom: 2px solid #000;

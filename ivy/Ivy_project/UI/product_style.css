@@ -111,13 +111,13 @@
     border: #000 solid 2px;
 }
 
-.product-content-right .product-quantity {
+.product-quantity {
     display: flex;
     align-items: center;
     margin-top: 24px;
 }
 
-.product-content-right .product-quantity .quantity-input{
+.product-quantity .quantity-input{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,7 +126,7 @@
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-.product-content-right .product-quantity .quantity-input span{
+.product-quantity .quantity-input span{
     width: 20px;
     border: #000 solid 0.5px;
     text-align: center;

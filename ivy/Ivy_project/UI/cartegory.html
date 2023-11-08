@@ -22,13 +22,13 @@
     <title>Ivy-Project</title>
 </head>
 
-<body>
+<body class = "">
     <header>
         <div class="logo">
             <a class="navbar-brand" href="#"><img style="width: 100px; height: auto;" src="./images/logoIVY.png" alt=""></a>
         </div>
         <div class="menu">
-            <li><a href="">Nữ</a>
+            <li><a href="">NỮ</a>
                 <ul class="sub-menu">
                     <li><a href="">Hàng mới về</a></li>
                     <li><a href="">Collectiion</a></li>
@@ -90,11 +90,105 @@
                 <a class="fas fa-user-secret" href=""></a>
             </li>
             <li>
-                <a class="fas fa-shopping-cart" href=""></a>
+                <div class="icon-cart">
+                    <i class="fas fa-shopping-cart" href=""></i>
+                    <span>0</span>
+                </div>              
             </li>
         </div>
-
     </header>
+
+    <section class="carttab">
+        <div class="cart-tab">
+            <div class="cart-tab-top">
+                <h1>Giỏ hàng</h1>
+                <button class="close"><?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg></button>
+            </div>
+            
+            <div class="list-cart">
+                <div class="item">
+                    <div class="image">
+                        <img src="./images/Nu_aocroptop.jpg" alt="">
+                    </div>
+                    <div class="item-name">
+                        Áo crop-top
+                    </div> 
+                    
+                    <div class="price">
+                        1.000.000đ
+                    </div>
+
+                    <div class="quantity">
+                        <span class="minus">-</span>
+                        <span>1</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image">
+                        <img src="./images/Nu_aoBochun.jpg" alt="">
+                    </div>
+                    <div class="item-name">
+                        Áo lụa tay bo chun                    </div> 
+                    
+                    <div class="price">
+                        1.000.000đ
+                    </div>
+
+                    <div class="quantity">
+                        <span class="minus">-</span>
+                        <span>1</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image">
+                        <img src="./images/Nu_aocongso.jpg" alt="">
+                    </div>
+                    <div class="item-name">
+                        Áo công sở
+                    </div> 
+                    
+                    <div class="price">
+                        1.000.000đ
+                    </div>
+
+                    <div class="quantity">
+                        <span class="minus">-</span>
+                        <span>1</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image">
+                        <img src="./images/Nu_aohaiday.jpg" alt="">
+                    </div>
+                    <div class="item-name">
+                        Áo hai dây
+                    </div> 
+                    
+                    <div class="price">
+                        1.000.000đ
+                    </div>
+
+                    <div class="quantity">
+                        <span class="minus">-</span>
+                        <span>1</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn">
+                <button class="check-out">Xem giỏ hàng</button>
+            </div>
+            
+        </div>
+    </section>
     <!-- Cartegory -->
     <section class="cartegory">
         <div class="container">
@@ -263,6 +357,22 @@
         })
 
     })
+</script>
+
+<!-- Cart tab -->
+
+<script>
+    const icon_cart = document.querySelector('.icon-cart')
+    const cart_tab = document.querySelector('.cart-tab')
+    const close_btn = document.querySelector('.close')
+
+    icon_cart.addEventListener('click', () => {
+        cart_tab.classList.add('active')
+    })
+
+    close_btn.addEventListener('click', () => {
+        cart_tab.classList.remove('active')
+    }) 
 </script>
 <!-- <script>
     const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
