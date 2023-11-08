@@ -139,7 +139,16 @@
                             <td><p>Áo sơ mi lụa cổ trụ phối bèo</p></td>
                             <td class="product-color-img"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt=""></td>
                             <td><p>L</p></td>
-                            <td><input type="numver" value="1" min="1"></td>
+                            <!-- <td><input type="numver" value="1" min="1"></td> -->
+                            <td>
+                                <div class="product-quantity">
+                                    <div class="quantity-input">
+                                        <span class="minus" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">-</span>
+                                        <span class="num" style="width: 30px;">01</span>
+                                        <span class="plus" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">+</span>
+                                    </div> 
+                                </div>
+                            </td>
                             <td><p style="font-weight: bold; font-size:16px">1.029.000đ</p></td>
                             <td><span>X</span></td>
                         </tr>
@@ -149,7 +158,16 @@
                             <td><p>Áo croptop</p></td>
                             <td class="product-color-img"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/050.png" alt=""></td>
                             <td><p>L</p></td>
-                            <td><input type="numver" value="1" min="1"></td>
+                            <!-- <td><input type="numver" value="1" min="1"></td> -->
+                            <td>
+                                <div class="product-quantity">
+                                    <div class="quantity-input">
+                                        <span class="minus" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">-</span>
+                                        <span class="num" style="width: 30px;">01</span>
+                                        <span class="plus" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">+</span>
+                                    </div> 
+                                </div>
+                            </td>
                             <td><p style="font-weight: bold; font-size:16px">1.029.000đ</p></td>
                             <td><span>X</span></td>
                         </tr>
@@ -253,5 +271,29 @@
     })
 </script>
 
+<!-- Change quantity -->
+
+<script>
+    const plus = document.querySelector(".plus"),
+    num = document.querySelector(".num"),
+    minus = document.querySelector(".minus")
+
+    let a = 1    
+
+    plus.addEventListener("click", () => {
+        a++
+        a = (a < 10) ? '0' + a : a
+        num.innerHTML = a
+    })
+
+    minus.addEventListener("click", () => {
+        if(a > 1)
+        {
+            a--
+            a = (a < 10) ? '0' + a : a
+            num.innerHTML = a
+        }
+    })
+</script>
 
 </html>

@@ -103,6 +103,26 @@
     max-width: 120px;
 }
 
+.product-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.product-quantity .quantity-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+.product-quantity .quantity-input span{
+    width: 20px;
+    border: #000 solid 0.5px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .cart-content-right {
     border: 1px solid #ccc;
     margin-left: 60px;
