@@ -220,7 +220,11 @@ header:hover {
     display: flex;
     justify-content: center;
 }
+
 .cart-tab .check-out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #000;
     color: #fff;
     font-size: 20px;
@@ -230,7 +234,7 @@ header:hover {
     border: none;
 }
 
-.cart-tab .check-out:hover {
+.cart-tab .check-out:hover{
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
