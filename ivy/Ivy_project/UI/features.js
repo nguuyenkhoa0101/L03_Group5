@@ -39,3 +39,9 @@ icon_cart.addEventListener('click', () => {
 close_btn.addEventListener('click', () => {
     cart_tab.classList.remove('active')
 }) 
+
+// Related product
+var mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    // Các tùy chọn khác
+});
