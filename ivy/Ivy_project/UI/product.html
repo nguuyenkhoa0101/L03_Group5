@@ -20,9 +20,12 @@
     <!-- Link css -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="product_style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
     
     <!-- Link js -->
-    <script type="text/javascript" src="features.js" ></script>
     
     <title>Ivy-Project</title>
 </head>
@@ -135,7 +138,8 @@
                         <img src="./images/Nu_aoBochun.jpg" alt="">
                     </div>
                     <div class="item-name">
-                        Áo lụa tay bo chun                    </div> 
+                        Áo lụa tay bo chun                   
+                    </div> 
                     
                     <div class="price">
                         1.000.000đ
@@ -247,18 +251,18 @@
                     <div class="product-quantity">
                         <p style="font-weight: bold;">Số lượng</p>
                         <div class="quantity-input">
-                            <span class="minus" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">-</span>
-                            <span class="num" style="width: 40px;">01</span>
-                            <span class="plus" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">+</span>
+                            <span class="quantity-minus" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;">-</span>
+                            <span class="quantity-num" style="width: 40px;">01</span>
+                            <span class="quantity-plus" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">+</span>
                         </div> 
                     </div>
 
                     <div class="product-purchase-button">
-                        <div class="buy">
+                        <div class="add-to-cart">
                             <button>THÊM VÀO GIỎ HÀNG</button>
                         </div>
                         
-                        <div class="add-to-cart">
+                        <div class="buy">
                             <button>MUA HÀNG</button>
                         </div>
                         <a href="#">Tìm tại cửa hàng</a>
@@ -347,33 +351,76 @@
         <div class="title">
             <h1>Sản phẩm tương tự</h1>
         </div>
-        <div class="related-products-container row">
-            <div class="related-products-item">
-                <img src="./images/Nu_aoBochun.jpg" alt="">
-                <p style="font-weight: bold;">Áo Lụa Tay Bo Chun</p>
-                <p>950.000<sup>đ</sup></p>
+        <div class="related-products-container swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aoBochun.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Lụa Tay Bo Chun</p>
+                    <p>950.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aohaiday.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Hai Dây Chiffron</p>
+                    <p>425.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aocongso.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
+                    <p>1.190.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aorutday.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
+                    <p>1.190.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aocroptop.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Rút Dây</p>
+                    <p>1.090.000<sup>đ</sup></p>
+                </div>
+        
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aocroptop.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Rút Dây</p>
+                    <p>1.090.000<sup>đ</sup></p>
+                </div>
+        
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aoBochun.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Lụa Tay Bo Chun</p>
+                    <p>950.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aohaiday.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Hai Dây Chiffron</p>
+                    <p>425.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aocongso.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
+                    <p>1.190.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aorutday.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
+                    <p>1.190.000<sup>đ</sup></p>
+                </div>
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aocroptop.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Rút Dây</p>
+                    <p>1.090.000<sup>đ</sup></p>
+                </div>
+        
+                <div class="related-products-item swiper-slide">
+                    <img src="./images/Nu_aocroptop.jpg" alt="">
+                    <p style="font-weight: bold;">Áo Sơ Mi Rút Dây</p>
+                    <p>1.090.000<sup>đ</sup></p>
+                </div>
             </div>
-            <div class="related-products-item">
-                <img src="./images/Nu_aohaiday.jpg" alt="">
-                <p style="font-weight: bold;">Áo Hai Dây Chiffron</p>
-                <p>425.000<sup>đ</sup></p>
-            </div>
-            <div class="related-products-item">
-                <img src="./images/Nu_aocongso.jpg" alt="">
-                <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
-                <p>1.190.000<sup>đ</sup></p>
-            </div>
-            <div class="related-products-item">
-                <img src="./images/Nu_aorutday.jpg" alt="">
-                <p style="font-weight: bold;">Áo Sơ Mi Công Sở</p>
-                <p>1.190.000<sup>đ</sup></p>
-            </div>
-            <div class="related-products-item">
-                <img src="./images/Nu_aocroptop.jpg" alt="">
-                <p style="font-weight: bold;">Áo Sơ Mi Rút Dây</p>
-                <p>1.090.000<sup>đ</sup></p>
-            </div>
-        </div>
+            <br><br>
+            <div class="swiper-pagination custom"></div>
+          </div>
+        
     </section>
 
     <footer>
@@ -405,119 +452,134 @@
 
         <div class="footer-bottom">©IVYmoda All rights reserved</div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="features.js" ></script>
+    
 
-</body>
-<script>
-    const header = document.querySelector("header")
-    window.addEventListener("scroll", function() {
-        x = window.pageYOffset
-            // console.log(x)
-        if (x > 0) {
-            header.classList.add("sticky")
-        } else {
-            header.classList.remove.add("sticky")
-        }
-
-    })
-</script>
-<script>
-    const item_sliderbar = document.querySelectorAll(".cartegory-left-li")
-    item_sliderbar.forEach(function(menu, index) {
-        menu.addEventListener("click", function() {
-
-            menu.classList.toggle("block")
-
+    <script>
+        const header = document.querySelector("header")
+        window.addEventListener("scroll", function() {
+            x = window.pageYOffset
+                // console.log(x)
+            if (x > 0) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove.add("sticky")
+            }
+    
         })
-
-    })
-</script>
-<!-- Change image -->
-<script>
-    changeImage = (smallImg) => {
-        bigImage = document.getElementById("fullImage")
-        bigImage.src = smallImg.src
-    }
-</script>
-
-<!-- Change quantity -->
-
-<script>
-    const plus = document.querySelector(".plus"),
-    num = document.querySelector(".num"),
-    minus = document.querySelector(".minus")
-
-    let a = 1    
-
-    plus.addEventListener("click", () => {
-        a++
-        a = (a < 10) ? '0' + a : a
-        num.innerHTML = a
-    })
-
-    minus.addEventListener("click", () => {
-        if(a > 1)
-        {
-            a--
+    </script>
+    <script>
+        const item_sliderbar = document.querySelectorAll(".cartegory-left-li")
+        item_sliderbar.forEach(function(menu, index) {
+            menu.addEventListener("click", function() {
+    
+                menu.classList.toggle("block")
+    
+            })
+    
+        })
+    </script>
+    <!-- Change image -->
+    <script>
+        changeImage = (smallImg) => {
+            bigImage = document.getElementById("fullImage")
+            bigImage.src = smallImg.src
+        }
+    </script>
+    
+    <!-- Change quantity -->
+    
+    <script>
+        const plus = document.querySelector(".quantity-plus"),
+        num = document.querySelector(".quantity-num"),
+        minus = document.querySelector(".quantity-minus")
+    
+        let a = 1    
+    
+        plus.addEventListener("click", () => {
+            a++
             a = (a < 10) ? '0' + a : a
             num.innerHTML = a
-        }
-    })
-</script>
-
-<!-- Choosing size -->
-<script>
-    const sizes = document.querySelectorAll('.size-button')
-    sizes.forEach((size) => {
-        size.addEventListener('click', (event) => {
-            sizes.forEach(size => {size.classList.remove('active')})
-            size.classList.add('active')
         })
-    })
-</script>
-
-<!-- Tab product detail -->
-<script>
-    const tabs= document.querySelectorAll('.product-tab-btn')
-    const all_content= document.querySelectorAll('.product-tab-content')
-    tabs.forEach((tab, index)=>{
-        tab.addEventListener('click', (event)=>{
-            tabs.forEach(tab=>{tab.classList.remove('active')})
-            tab.classList.add('active')
-
-            var line = document.querySelector('.line')
-            line.style.width = event.target.offsetWidth + "px"
-            line.style.left = event.target.offsetLeft + "px"
-            
-            all_content.forEach(content => {content.classList.remove('active')})
-            all_content[index].classList.add('active')
-        })
-
-        
-    })
-
-    const button = document.querySelector(".show-more")
-    if(button)
-    {
-        button.addEventListener("click", function() {
-            document.querySelector(".product-detail-container").classList.toggle("activeB")
-        })
-    }
     
-</script>
+        minus.addEventListener("click", () => {
+            if(a > 1)
+            {
+                a--
+                a = (a < 10) ? '0' + a : a
+                num.innerHTML = a
+            }
+        })
+    </script>
+    
+    <!-- Choosing size -->
+    <script>
+        const sizes = document.querySelectorAll('.size-button')
+        sizes.forEach((size) => {
+            size.addEventListener('click', (event) => {
+                sizes.forEach(size => {size.classList.remove('active')})
+                size.classList.add('active')
+            })
+        })
+    </script>
+    
+    <!-- Tab product detail -->
+    <script>
+        const tabs= document.querySelectorAll('.product-tab-btn')
+        const all_content= document.querySelectorAll('.product-tab-content')
+        tabs.forEach((tab, index)=>{
+            tab.addEventListener('click', (event)=>{
+                tabs.forEach(tab=>{tab.classList.remove('active')})
+                tab.classList.add('active')
+    
+                var line = document.querySelector('.line')
+                line.style.width = event.target.offsetWidth + "px"
+                line.style.left = event.target.offsetLeft + "px"
+                
+                all_content.forEach(content => {content.classList.remove('active')})
+                all_content[index].classList.add('active')
+            })
+    
+            
+        })
+    
+        const button = document.querySelector(".show-more")
+        if(button)
+        {
+            button.addEventListener("click", function() {
+                document.querySelector(".product-detail-container").classList.toggle("activeB")
+            })
+        }
+        
+    </script>
+    
+    <script>
+        const icon_cart = document.querySelector('.icon-cart')
+        const cart_tab = document.querySelector('.cart-tab')
+        const close_btn = document.querySelector('.close')
+    
+        icon_cart.addEventListener('click', () => {
+            cart_tab.classList.add('active')
+        })
+    
+        close_btn.addEventListener('click', () => {
+            cart_tab.classList.remove('active')
+        }) 
+    </script>
 
-<script>
-    const icon_cart = document.querySelector('.icon-cart')
-    const cart_tab = document.querySelector('.cart-tab')
-    const close_btn = document.querySelector('.close')
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 5,
+          spaceBetween: 0,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+</body>
 
-    icon_cart.addEventListener('click', () => {
-        cart_tab.classList.add('active')
-    })
-
-    close_btn.addEventListener('click', () => {
-        cart_tab.classList.remove('active')
-    }) 
-</script>
 
 
 </html>

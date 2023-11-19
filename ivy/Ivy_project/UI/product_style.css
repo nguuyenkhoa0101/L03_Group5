@@ -137,10 +137,11 @@
 .product-content-right .product-purchase-button {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     margin-top: 24px;
 }
 
-.product-content-right .product-purchase-button button {
+.product-content-right .product-purchase-button .add-to-cart button {
     text-transform: uppercase;
     width: 200px;
     height: 50px;
@@ -153,9 +154,27 @@
     cursor: pointer;
 }
 
-.product-content-right .product-purchase-button button:hover {
+.product-content-right .product-purchase-button .add-to-cart button:hover {
     background-color: #fff;
     color: #000;
+}
+
+.product-content-right .product-purchase-button .buy button {
+    text-transform: uppercase;
+    width: 200px;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border: #000 solid 0.5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.product-content-right .product-purchase-button .buy button:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 .product-content-right .product-purchase-button .buy {
@@ -271,4 +290,9 @@
 
 .related-products-container .related-products-item img {
     width: 100%;
+}
+
+.related-products-container .swiper-slide img{
+    height: 300px;
+    width: auto;
 }
