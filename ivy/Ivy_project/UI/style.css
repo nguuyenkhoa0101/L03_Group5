@@ -161,6 +161,7 @@ header:hover {
     display: flex;
     position: relative;
     cursor: pointer;
+    margin-top: 4px;
 }
 
 .icon-cart span {
