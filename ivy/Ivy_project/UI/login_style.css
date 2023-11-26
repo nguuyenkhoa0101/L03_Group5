@@ -1,0 +1,138 @@
+footer {
+    margin-top: 100px;
+}
+
+.login {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.login-form {
+    width: 32%;
+    height: fit-content;
+    border: 1px solid #ccc;
+    padding: 0px 30px;
+    padding-top: 50px;
+    border-radius: 12px;
+    display: none;
+}
+
+.login-form.active
+{
+    display:block;
+}
+
+.login-form img {
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+
+.login-form .login-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    margin-bottom: 20px;
+}
+
+.login-form .login-btn button{
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.login-form .login-btn button:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.login-form p {
+    text-align: center;
+}
+
+.login-form .sign-in-link {
+    color: #555555;
+    cursor: pointer;
+}
+
+.login-form .sign-in-link:hover {
+    color: #000;
+}
+
+
+.sign-in {
+    display: flex;
+    justify-content: center;
+
+}
+.sign-in-form {
+    width: 32%;
+    height: fit-content;
+    border: 1px solid #ccc;
+    padding: 0px 30px;
+    padding-top: 50px;
+    border-radius: 12px;
+    display: none;
+}
+
+.sign-in-form.active
+{
+    display:block;
+}
+
+.sign-in-form img {
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+
+.sign-in-form .sign-in-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    margin-bottom: 20px;
+}
+
+.sign-in-form .sign-in-btn button{
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sign-in-form .sign-in-btn button:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.sign-in-form p {
+    text-align: center;
+}
+
+.sign-in-form .login-link {
+    color: #555555;
+    cursor: pointer;
+}
+
+.sign-in-form .login-link:hover {
+    color: #000;
+}
+
+@media only screen and (max-width: 767px) {
+    .sign-in-form, .login-form{
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .sign-in-form, .login-form{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    
+}
