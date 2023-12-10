@@ -64,16 +64,16 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://pubcdn.ivymoda.com/files/news/2023/11/27/d7bea62f7ff152d7ff4f5431ca163ca3.jpg"
+                    <img src="https://routine.vn/media/amasty/webp/banner/tmp/images/Coffee-Lovers-Collection-Series-2_2_jpg.webp"
                         class="d-block w-100" alt="..."
                         style="width: 100%; object-fit: cover; object-position: center;">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://pubcdn.ivymoda.com/files/news/2023/11/30/61ef51ca05aaf92a70866fd4d2c79909.jpg"
+                    <img src="https://routine.vn/media/amasty/webp/wysiwyg/Emagazine-desktop_jpg.webp"
                         class="d-block w-100" alt="..." style="width: 100%; height: 100%; object-position: center;">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://pubcdn.ivymoda.com/files/news/2023/11/30/6e15c4ed40d8434ef1e9f9f2b1f91aeb.jpg"
+                    <img src="https://routine.vn/media/amasty/webp/banner/tmp/images/Couple_Collection_Desktop_jpg.webp"
                         class="d-block w-100" alt="..." style="width: 100%; height: 100%; object-position: center;">
                 </div>
             </div>
@@ -104,32 +104,39 @@
             <div class="row content">
                 <div class="container px-4 px-lg-6">
                     <div class="row m-4">
-                        <h2 class="text-center mt-3"><span class="fw-bold">IVY MODA</span> - <span
+                        <h2 class="text-center mt-3"><span class="fw-bold">ROUTINE</span> - <span
                                 class=" fw-bold">Thương hiệu thời trang số 1 Việt Nam</span>
                         </h2><br>
 
                         <p class="text-center">
                             <span class="fw-bold">Tạo dựng phong cách bằng những tuyên ngôn thời trang</span>
-                        <p class="fst-italic justify-content">
+                        <p class="justify-content">
                             <span style="display: flex; justify-content: center; align-items: center;">
                                 <img src="assets/images/team_logo.png" alt=""
                                     style="width: 15%; height: auto; object-position: center;">
                             </span>
                             <br>
-                            Xuất phát điểm từ lĩnh vực thời trang công sở năm 2005, và vươn mình mạnh mẽ để đi đầu trong
-                            mảng công sở nữ cao cấp tại Việt Nam. Nhưng với ý chí luôn luôn không ngừng vận động để thay
-                            đổi, IVY moda nhanh chóng chiếm lấy thị phần thị trường thời trang nội địa và trở thành
-                            thương hiệu thời trang xu hướng hàng đầu Việt Nam phục vụ cho phái đẹp. Vào năm 2017, IVY
-                            moda khẳng định vị thế bằng việc là một trong những thương hiệu thời trang Việt hiếm hoi đủ
-                            tiềm lực tổ chức 2 Fashion Show hàng năm. Dự kiến vào năm 2025, thương hiệu NY moda sẽ có
-                            130 cửa hàng trên toàn quốc.
-
-                        </p>
-                        <p class="fst-italic">MY moda còn thể hiện tinh thần, phong cách, lý tưởng sống và làm việc qua
-                            nhiều sự kiện đồng hành hoặc hợp tác với các nghệ sĩ tên tuổi lớn như: Sơn Tùng MTP, Hoa hậu
-                            Tiểu Vy, Rapper Đen Vâu, Ca sỹ Hoàng Thuỳ Linh... .Thêm vào đó, năm 2022 còn là bước đột phá
-                            trên con đường khẳng định dấu ấn thời trang của IVY moda bằng cách ra mắt một thương hiệu
-                            thời trang nam hoàn toàn mới có tên là Metagent.
+                            Như ý nghĩa của tên gọi, trang phục của Routine hướng đến việc trở thành thói quen, lựa chọn
+                            hàng ngày cho nam giới trong mọi tình huống. Bởi Routine hiểu rằng, sự tự tin về phong cách
+                            ăn mặc sẽ làm nền tảng, tạo động lực cổ vũ mỗi người mạnh dạn theo đuổi những điều mình mong
+                            muốn. Trong đó, trang phục nam phải mang vẻ đẹp lịch lãm, hợp mốt và tạo sự thoải mái, quan
+                            trọng nhất là mang đến cảm giác “được là chính mình” cho người mặc.
+                            <br>
+                            <br>
+                            Thời trang Routine thuyết phục khách hàng bằng từng kiểu dáng trang phục thiết kế độc
+                            quyền, sự sắc sảo trong mỗi đường nét cắt may, sử dụng chất liệu vải cao cấp và luôn hòa
+                            điệu cùng xu hướng quốc tế. Đây là con đường Routine theo đuổi và hướng đến phát triển
+                            bền vững.
+                            <br>
+                            <br>
+                            Thành lập từ năm 2013, đến nay hệ thống cửa hàng của Routine đang là địa chỉ
+                            “One stop fashion shop” cung ứng cho nam giới mọi nhu cầu về thời trang với tất cả các
+                            loại trang phục, phụ kiện. Phong cách tối giản đặc trưng của Routine mang đến sự gần
+                            gũi, đa dụng và đủ sức tạo nên dấu ấn riêng cho người mặc. Các sản phẩm quần tây, áo sơ
+                            mi, quần jeans, áo thun, áo jacket... đều được thiết kế năng động, dễ dàng kết hợp để
+                            mặc đi làm, đi chơi hay du lịch. Routine hiện có hệ thống 27 cửa hàng tại TP.HCM, Hà
+                            Nội, Hải phòng, Đà Nẵng, Kiên Giang và Vũng Tàu. Thương hiệu thường xuyên ra mắt bộ sưu
+                            tập riêng, bắt kịp xu hướng thời trang quốc tế.
                         </p>
                         </p>
                     </div>
@@ -140,11 +147,9 @@
     <div class="about--service mt-5">
         <div class="text--italic">What we do</div>
         <div class="text--bold">OUR SERVICE</div>
-        <div class="para--short">Ivy Moda không chỉ chú trọng vào việc tạo ra những thiết kế đẹp mắt, mà còn đặt mục
-            tiêu cao trong việc đảm bảo chất lượng sản phẩm. Quá trình sản xuất diễn ra theo quy trình nghiêm ngặt và
-            được kiểm soát chặt chẽ để đảm bảo từng sản phẩm đạt đúng tiêu chuẩn cao nhất. Đội ngũ chuyên gia và nhân
-            viên tận tâm của Ivy Moda luôn đảm bảo rằng mỗi chiếc áo, váy hay phụ kiện đều được làm với sự tỉ mỉ và chất
-            lượng tuyệt đối.
+        <div class="para--short">“Routine đang tạo ra những bộ trang phục sản xuất trong nước hoàn toàn có thể sánh
+            ngang với các thương hiệu thời trang nam đến từ nước ngoài về kiểu dáng, chất lượng lẫn phong cách thời
+            trang.” - CEO Routine.
         </div>
 
         <div class="about-container">

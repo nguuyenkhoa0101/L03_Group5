@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Hanken Grotesk'; 
   color: #4d4643;
 }
 
@@ -26,7 +26,6 @@ a {
 
 .navbar {
   background: #f6f6f6; 
- 
 }
 
 .navbar:hover {
@@ -72,37 +71,36 @@ a {
   align-items: center; 
   justify-content: space-between; 
   padding: 10px 0 10px 30px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Hanken Grotesk'; 
   font-size: 13px;
   font-weight: 600;
-  color: #111;
+  color: #4d4643 !important;
   white-space: nowrap;
   text-transform: uppercase;
   transition: 0.3s;
-}
+} 
 .navbar a i, .navbar a:focus i {
   font-size: 10px;
   line-height: 0;
   margin-left: 5px;
 }
-.menu-container {
-  margin-left: 100px;
-  display: flex;
-  justify-content: space-between;
-}
-.remain-container{
-  margin-left: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-.menu a{
-  font-size: 12px;
-}
-.menu-red a{
-  color: red !important;
-  font-size: 12px;
-}
-.menu a:hover {
+.modal-dialog-centered {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      height: 100vh;
+    }
+	#size-table {
+      max-width: 800px; /* Đặt kích thước tối đa cho modal */
+    }
+
+    .modal-body .table {
+      width: 100%; /* Đặt chiều rộng của bảng là 100% */
+    }
+  .nav-item a{
+    font-size: 15px;
+  }
+.nav-item a:hover {
   color: red !important;
 }
 #carouselExampleControls .carousel-inner .carousel-item img {
@@ -345,115 +343,6 @@ a {
             margin-bottom: 20px;
         }
     }
-
-
-
-
-
-
-    .cart-tab {
-      margin-top: 50px;
-      width: 350px;
-      background-color: #353432;
-      color: #eee;
-      position: fixed;
-      top: 0;
-      right: -350px;
-      bottom: 0;
-      display: grid;
-      grid-template-rows: 70px 1fr 70px;
-      z-index: 10;
-      transition: .3s;
-  }
-  
-  .cart-tab.active {
-      right: 0;
-  }
-  
-  .cart-tab-top {
-      display: flex;
-      justify-content: space-between;
-  }
-  
-  .cart-tab h1 {
-      padding: 20px;
-      margin: 0;
-      font-weight: 300;
-  }
-  .cart-tab-top .close {
-      height: 25px;
-      width: 25px;
-      margin-top: 20px;
-      margin-right: 20px;
-      cursor: pointer;
-      background-color: #353432;
-      border: none;
-  }
-  
-  .cart-tab .btn {
-      display: flex;
-      justify-content: center;
-  }
-  
-  .cart-tab .check-out {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #000;
-      color: #fff;
-      font-size: 20px;
-      height: 50px;
-      width: 70%;
-      cursor: pointer;
-      border: none;
-  }
-  
-  .cart-tab .check-out:hover{
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-  }
-  
-  .list-cart {
-      overflow: auto;
-  }
-  
-  .list-cart .item img {
-      width: 60px;
-  }
-  
-  .list-cart .item {
-      display: grid;
-      grid-template-columns: 70px 90px 70px 1fr;
-      gap: 10px;
-      text-align: center;
-      align-items: center;
-  }
-  
-  .list-cart .quantity span {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-color: #eee;
-      color: #555;
-      border-radius: 50%;
-      cursor: pointer;
-  }
-  
-  .list-cart .quantity span:nth-child(2) {
-      background-color: transparent;
-      color: #eee;
-  
-  }
-  
-  .list-cart .item:nth-child(even) {
-      background-color: #eee1;
-  }
-  
-  
-  .list-cart::-webkit-scrollbar {
-      width: 0;
-  }
 
   .icon-cart span{
         font-size: 12px;

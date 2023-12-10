@@ -12,14 +12,9 @@ class BlogController extends BaseController
 
 	public function index()
 	{
-		if (isset($_GET['pg']))
-		{
-			$pg = $_GET['pg'];
-		}
-		else 
-		{
-			$pg = 1;
-		}
+		$currentPage = isset($_GET['pg']) ? $_GET['pg'] : 1;
+        $postsPerPage = 3;
+
 		$newses = News::getAllShow();
 		$recent = News::recentNews();
 		foreach ($newses as $news)
@@ -38,11 +33,14 @@ class BlogController extends BaseController
 				$comment->replies = Comment::getReply(intval($comment->id));
 			}
 		}
-		$count = intdiv(count($newses), 4) + 1;
-		$newses = array_slice($newses, ($pg - 1) * 4, 4);
-		$data = array('newses' => $newses, 'recent' => $recent, 'count' => $count);
-		$this->render('index', $data);
+		$totalPages = ceil(count($newses) / $postsPerPage);
+        $startIndex = ($currentPage - 1) * $postsPerPage;
+        $endIndex = $startIndex + $postsPerPage;
 
+        $newses = array_slice($newses, $startIndex, $endIndex);
+
+        $data = array('newses' => $newses, 'recent' => $recent, 'currentPage' => $currentPage, 'totalPages' => $totalPages);
+        $this->render('index', $data);
 	}
 
 	public function reply()
@@ -65,5 +63,8 @@ class BlogController extends BaseController
 
 		$req = Comment::insert($content, $news_id, $user_id);
 		echo 'success';
+		exit();
 	}
 }
+
+?>

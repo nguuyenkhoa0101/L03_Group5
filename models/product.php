@@ -84,5 +84,29 @@ class Product
                 WHERE id = $id
             ;");
     }
+
+    static function search($keyword)
+{
+    $db = DB::getInstance();
+    $keyword = $db->real_escape_string($keyword); // Để ngăn chặn SQL injection
+
+    $req = $db->query("SELECT * FROM product WHERE name LIKE '%$keyword%'");
+    $products = [];
+
+    foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+        $products[] = new Product(
+            $product['id'],
+            $product['name'],
+            $product['price'],
+            $product['description'],
+            $product['content'],
+            $product['img'],
+            $product['sale']
+        );
+    }
+
+    return $products;
+}
+
 }
 ?>

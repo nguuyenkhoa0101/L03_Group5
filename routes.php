@@ -1,7 +1,8 @@
 <?php
 $pages = array(
   'error' => ['errors'],
-  'main' => ['layouts', 'about', 'services', 'blog', 'archive', 'contact', 'login', 'register', 'detail', 'sale', 'detail_blog'],
+  'main' => ['layouts', 'about', 'services', 'blog', 'archive', 'contact', 'login', 'register', 'detail', 
+  'sale', 'detail_blog', 'delivery', 'finish'],
   'admin' => ['layouts', 'members', 'products','womenproducts','menproducts' ,'news', 'comments']
 );
 $controllers = array(
@@ -30,6 +31,8 @@ $controllers = array(
   'blog' => ['index', 'comment', 'reply'],
   'services' => ['index'],
   'register' => ['index', 'submit', 'editInfo'],
+  'delivery' => ['index', 'add'],
+  'finish' => ['index'],
   // 'login' => ['index']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 

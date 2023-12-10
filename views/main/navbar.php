@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Ivy-Project</title>
+    <title>Routine Vietnam</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -32,14 +32,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- Link CSS -->
     <link rel="stylesheet" href="assets/stylesheets/main/services.css">
+    <link rel="stylesheet" href="assets/stylesheets/delivery.css">
+    <link rel="stylesheet" href="assets/stylesheets/finish.css">
+    <link rel="stylesheet" href="assets/stylesheets/product.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-
+    <link href='https://fonts.googleapis.com/css?family=Hanken Grotesk' rel='stylesheet'>
 </head>
 
 <body>
@@ -133,98 +135,69 @@
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="public/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
         <nav class="navbar navbar-expand-lg navbar-light bd-subnavbar py-2">
-
-            <h1 class="logo "><a href="index.php?page=main&controller=layouts&action=index"><img
-                        style="width: 100px; height: auto;" src="assets/images/logoIVY.png" alt=""></a></h1>
-            <button class="navbar-toggler ms-5" type="button" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse hide" id="navbarSupportedContent">
-                <div class="menu-container">
-                    <li class="menu">
-                        <a href="index.php?page=main&controller=womenproducts&action=index" class="nav-link">NỮ</a>
-                    </li>
-                    <!--      <ul class="sub-menu">
-                        <li><a href="">Hàng mới về</a></li>
-                        <li><a href="">Collectiion</a></li>
-                        <li><a href="">Áo</a>
-                            <ul>
-                                <li>
-                                    <a href="">Áo sơ mi</a>
-                                </li>
-                                <li><a href="">
-                                                Áo thun
-                                            </a></li>
-                                <li><a href="">Áo Vest</a></li>
-                                <li>
-                                    <a href="">Áo khoác</a></li>
-                                <li><a href="">Áo len</a></li>
-                            </ul>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php?page=main&controller=layouts&action=index">
+                    <img style="width: 100px; height: 100%;"
+                        src="https://routine.vn/media/amasty/webp/logo/websites/1/logo-black-2x_png.webp" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=womenproducts&action=index">NỮ</a>
                         </li>
-                        <li><a href="">Quần</a>
-                            <ul>
-                                <li><a href="">Quần jean</a></li>
-                                <li><a href="">Quần lửng</a></li>
-                                <li><a href="">Quần dài</a></li>
-
-
-                            </ul>
-
-                         </li>
-                      </ul>  -->
-
-                    </li>
-                    <li class="menu"><a href="index.php?page=main&controller=menproducts&action=index">NAM</a></li>
-                    <li class="menu"><a href="index.php?page=main&controller=products&action=index">TRẺ
-                            EM</a></li>
-                    <li class="menu-red"><a href="index.php?page=main&controller=sale&action=index">THÁNG 12 - SALE ĐẬM
-                            SÂU</a>
-                    </li>
-                    <li class="menu"><a href="index.php?page=main&controller=blog&action=index">TIN
-                            TỨC</a></li>
-                    <li class="menu"><a href="index.php?page=main&controller=contact&action=index">LIÊN HỆ</a>
-                    </li>
-                </div>
-                <div class="remain-container">
-                    <div class=" input-group " style=" margin-left: 30px; width: 300px;"">
-                    <input type=" text" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm"
-                        aria-describedby="button-addon2">
-                    </div>
-
-
-                    <?php
-                        if (!isset($_SESSION["guest"])){
-                    ?>
-                    <li class="menu"><a href="index.php?page=main&controller=register&action=index"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Đăng ký"><i
-                                class="bi bi-person-add" style="font-size: 20px;"></i></a>
-                    </li> <!-- Đăng ký -->
-                    <li class="menu"><a href="index.php?page=main&controller=login&action=index"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Đăng nhập"
-                            class="box-arrow-in-right"><i class="bi bi-person" style="font-size: 20px;"></i></a></li>
-                    <!-- Đăng nhập -->
-
-                    <?php
-                        }
-                        else{
-                            echo '
-                            <li class="menu"><a href="" data-bs-toggle="modal" data-bs-target="#EditUserModal"><i class="bi bi-person" style="font-size: 20px;"></i></a></li>
-                            <li class="menu"><a href="index.php?page=main&controller=login&action=logout" class="box-arrow-in-right"><i class="bi bi-person" style="font-size: 20px;"></i></a></li> <!-- Đăng xuất -->
-                            ';
-                        }
-                    ?>
-                    <li id="cart" class="menu">
-                        <a data-bs-toggle="tooltip" data-bs-placement="bottom">
-                            <i class="icon-cart bi bi-bag" style="font-size: 20px;">
-                                <span id="cartCount">0</span> <!-- Số lượng sẽ được hiển thị ở đây -->
-                            </i>
-                        </a>
-                    </li>
-                    <!-- <i class=" bi bi-list mobile-nav-toggle"></i> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=menproducts&action=index">NAM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=products&action=index">TRẺ EM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=sale&action=index"
+                                style="color: red !important">THÁNG
+                                12 - SALE ĐẬM SÂU</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=blog&action=index">TIN TỨC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=contact&action=index">LIÊN HỆ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=delivery&action=index">PAY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=finish&action=index">FINISH</a>
+                        </li>
+                    </ul>
+                    <form class="search_product d-flex" action="index.php?page=main&controller=products&action=index"
+                        method="post" autocomplete="off">
+                        <input class="form-control me-2" type="search" name="search_product" placeholder="Tìm kiếm"
+                            required>
+                        <button class="btn btn-secondary" type="submit" name="search_button"><i
+                                class="bi bi-search"></i></button>
+                    </form>
+                    <?php if (!isset($_SESSION["guest"])) { ?>
+                    <a href="index.php?page=main&controller=register&action=index" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="Đăng ký" class="nav-link"><i class="bi bi-person-add"
+                            style="font-size: 20px;"></i></a>
+                    <a href="index.php?page=main&controller=login&action=index" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="Đăng nhập" class="nav-link box-arrow-in-right"><i
+                            class="bi bi-person" style="font-size: 20px;"></i></a>
+                    <?php } else { ?>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#EditUserModal" class="nav-link"><i
+                            class="bi bi-person" style="font-size: 20px;"></i></a>
+                    <a href="index.php?page=main&controller=login&action=logout" class="nav-link box-arrow-in-right"><i
+                            class="bi bi-person" style="font-size: 20px;"></i></a>
+                    <?php } ?>
+                    <a data-bs-toggle="tooltip" data-bs-placement="bottom" class="nav-link" id="cart">
+                        <i class="icon-cart bi bi-bag" style="font-size: 20px;">
+                            <span id="cartCount">0</span>
+                        </i>
+                    </a>
                 </div>
             </div>
-
         </nav>
-
     </header><!-- End Header -->

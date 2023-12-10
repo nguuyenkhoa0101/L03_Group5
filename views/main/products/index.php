@@ -21,7 +21,21 @@
 
     }
     </style>
+    <br>
+    <br>
+    <br>
+    <?php
+if (isset($_POST['search_button'])) {
+    // Nếu nút tìm kiếm được nhấn
+    $search_keyword = $_POST['search_product'];
+    $search_result = Product::search($search_keyword);
 
+    // Hiển thị kết quả
+    foreach ($search_result as $product) {
+        echo "ID: {$product->id}, Name: {$product->name}, Price: {$product->price}, Description: {$product->description}<br>";
+    }
+}
+?>
 
     <!-- Items -->
     <div class="container py-2" style="margin-top: 80px;">
