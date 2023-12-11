@@ -1,0 +1,471 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4d4643;
+}
+
+.imageChange {
+  max-width: 100px;
+  height: auto;
+}
+
+a {
+  text-decoration: none; 
+}
+
+/* text */
+.red {
+  color:rgb(233, 37, 37);
+  font-weight: 550;
+}
+.green {
+  color: rgb(0, 255, 0);
+  font-weight: 550;
+}
+
+/* header */
+
+.navbar {
+  background: #f6f6f6; 
+ 
+}
+
+.navbar:hover {
+  background: #ffffff; 
+}
+
+
+#header {
+  background: rgb(167, 165, 165);
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 0px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+#header .logo {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+#header .logo a{
+  font-size: 20px;
+  color: rgb(233, 37, 37);
+}
+#header .logo a span {
+  color: #1eee41;
+}
+#header .logo img {
+  max-height: 25px;
+}
+
+
+.navbar {
+  padding: 0;
+}
+
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 10px 0 10px 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.navbar a i, .navbar a:focus i {
+  font-size: 10px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.menu-container {
+  margin-left: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.remain-container{
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu a{
+  font-size: 12px;
+}
+.menu-red a{
+  color: red !important;
+  font-size: 12px;
+}
+.menu a:hover {
+  color: red !important;
+}
+#carouselExampleControls .carousel-inner .carousel-item img {
+  border-radius: 80px 0 80px 0; /* Điều này sẽ thêm border-radius chỉ ở 2 góc đối diện */
+}
+/* Thêm các quy tắc CSS để tùy chỉnh giao diện của section giỏ hàng 
+#cartSection {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 600px; /* Điều chỉnh độ rộng của section giỏ hàng 
+  background-color: #eee;
+  z-index: 1000;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài 
+  padding: 20px; /* Thêm padding để nội dung không bám sát mép 
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho section 
+  display: none;
+} */
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto&display=swap');
+
+    .about--info {
+        margin: 0 auto;
+    }
+
+    .text--italic {
+        font-family: 'Kaushan Script', cursive;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .text--bold {
+        margin-top: 25px;
+        font-size: 30px;
+        font-weight: bolder;
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 45px;
+    }
+
+    .text--bold:before {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 65px;
+        background: linear-gradient(45deg, #00853e, #50c878);
+        bottom: 0;
+    }
+
+    .para--short {
+        display: block;
+        max-width: 100vw;
+        margin-top: 50px;
+        font-size: 15px;
+        color: #b3b3b3;
+        text-align: center;
+        white-space: pre-line;
+        width: 965px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card--personal {
+        margin-top: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        background: hsla(39, 100%, 77%, 1);
+        background: linear-gradient(45deg, #00853e, #50c878);
+    }
+
+    .card--personal-info {
+        width: 300px;
+        height: 400px;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 30px;
+        position: relative;
+        z-index: 99;
+        background-color: #242628;
+    }
+
+    .card-img {
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        transition: 0.25s;
+        margin: 0 auto;
+        transform: translateY(25px);
+        border-radius: 50%;
+        border: 2px solid #f2726a;
+        cursor: pointer;
+    }
+
+    .card-img:hover {
+        width: 100%;
+        height: 100%;
+        border-radius: unset;
+        border: unset;
+        transform: unset;
+    }
+
+    .card__img:hover {
+        width: 100%;
+        height: 100%;
+        border-radius: unset;
+        border: unset;
+        transform: unset;
+    }
+
+
+    .name {
+        margin-top: 40px;
+        color: white;
+    }
+
+    .role {
+        color: #f2726a;
+    }
+
+    .card-social a {
+        text-decoration: none;
+        color: white;
+        margin: 25px 20px 40px;
+        display: inline-block;
+        font-size: 25px;
+        transition: 0.25s;
+    }
+
+    .youtube:hover {
+        color: #FF0000;
+    }
+
+    .facebook:hover {
+        color: #0881ED;
+    }
+
+    .github:hover {
+        color: black;
+    }
+
+    .about--service .text--bold:before {
+        background: linear-gradient(45deg, #860025, #C85061);
+    }
+
+    .about-container {
+        margin-top: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+
+    .service--item {
+        margin: 10px;
+        width: 585px;
+        height: 303px;
+        border-radius: 30px;
+        background-position: bottom bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        transition-delay: 0s;
+        transition-property: all;
+        cursor: pointer;
+    }
+
+    .first-item {
+        background-image: 
+            url("https://pubcdn.ivymoda.com/files/news/2023/11/27/d7bea62f7ff152d7ff4f5431ca163ca3.jpg");
+    }
+
+    .second-item {
+        background-image: 
+        url("https://pubcdn.ivymoda.com/files/news/2023/11/27/d7bea62f7ff152d7ff4f5431ca163ca3.jpg");
+    }
+
+    .third-item {
+        background-image: 
+        url("https://pubcdn.ivymoda.com/files/news/2023/11/27/d7bea62f7ff152d7ff4f5431ca163ca3.jpg");
+    }
+
+    .fourth-item {
+        background-image:
+        url("https://pubcdn.ivymoda.com/files/news/2023/11/27/d7bea62f7ff152d7ff4f5431ca163ca3.jpg");
+    }
+
+    .first-item:hover {
+        background-image: unset;
+        background-color: #E0003E;
+    }
+
+    .second-item:hover {
+        background-image: unset;
+        background-color: #00AEEF;
+    }
+
+    .third-item:hover {
+        background-image: unset;
+        background-color: #EBEC41;
+    }
+
+    .fourth-item:hover {
+        background-image: unset;
+        background-color: #A12A9B;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .card--personal {
+            height: 500px;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        .card--personal {
+            flex-wrap: wrap;
+        }
+
+        .card--personal-info {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+
+
+
+
+
+    .cart-tab {
+      margin-top: 50px;
+      width: 350px;
+      background-color: #353432;
+      color: #eee;
+      position: fixed;
+      top: 0;
+      right: -350px;
+      bottom: 0;
+      display: grid;
+      grid-template-rows: 70px 1fr 70px;
+      z-index: 10;
+      transition: .3s;
+  }
+  
+  .cart-tab.active {
+      right: 0;
+  }
+  
+  .cart-tab-top {
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .cart-tab h1 {
+      padding: 20px;
+      margin: 0;
+      font-weight: 300;
+  }
+  .cart-tab-top .close {
+      height: 25px;
+      width: 25px;
+      margin-top: 20px;
+      margin-right: 20px;
+      cursor: pointer;
+      background-color: #353432;
+      border: none;
+  }
+  
+  .cart-tab .btn {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .cart-tab .check-out {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      color: #fff;
+      font-size: 20px;
+      height: 50px;
+      width: 70%;
+      cursor: pointer;
+      border: none;
+  }
+  
+  .cart-tab .check-out:hover{
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+  }
+  
+  .list-cart {
+      overflow: auto;
+  }
+  
+  .list-cart .item img {
+      width: 60px;
+  }
+  
+  .list-cart .item {
+      display: grid;
+      grid-template-columns: 70px 90px 70px 1fr;
+      gap: 10px;
+      text-align: center;
+      align-items: center;
+  }
+  
+  .list-cart .quantity span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #eee;
+      color: #555;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+  
+  .list-cart .quantity span:nth-child(2) {
+      background-color: transparent;
+      color: #eee;
+  
+  }
+  
+  .list-cart .item:nth-child(even) {
+      background-color: #eee1;
+  }
+  
+  
+  .list-cart::-webkit-scrollbar {
+      width: 0;
+  }
+
+  .icon-cart span{
+        font-size: 12px;
+        position: absolute;
+        background-color: red;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: #fff;
+        top: 50%;
+        right: 30px;
+  }
