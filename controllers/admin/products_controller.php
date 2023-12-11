@@ -30,7 +30,6 @@ class ProductsController extends BaseController
         $fileuploadname .= ".";
         $fileuploadname .= $ext;
         $target_file = $target_dir . basename($fileuploadname);
-
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Allow certain file formats
         if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg"
