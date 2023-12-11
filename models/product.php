@@ -9,8 +9,11 @@ class Product
     public $content;
     public $img;
     public $sale;
+    public $vote_number;
+    public $total_stars;
 
-    public function __construct($id, $name, $price, $description, $content, $img, $sale)
+
+    public function __construct($id, $name, $price, $description, $content, $img, $sale, $vote_number, $total_stars )
     {
         $this->id = $id;
         $this->name = $name;
@@ -19,6 +22,8 @@ class Product
         $this->content = $content;
         $this->img = $img;
         $this->sale= $sale;
+        $this->vote_number = $vote_number;
+        $this->total_stars = $total_stars;
     }
 
     static function getAll()
@@ -35,7 +40,9 @@ class Product
                 $product['description'],
                 $product['content'],
                 $product['img'],
-                $product['sale']
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars']
             );
         }
         return $products;
@@ -53,7 +60,9 @@ class Product
             $result['description'],
             $result['content'],
             $result['img'],
-            $result['sale']
+            $result['sale'],
+            $result['vote_number'],
+            $result['total_stars']
         );
         return $product;
     }
@@ -85,6 +94,17 @@ class Product
                 SET name = '$name', price = $price, description = '$description', content = '$content', img = '$img' , sale = '$sale'
                 WHERE id = $id ; 
             ;");
+    }
+    static function addvotebyid($id,$star){
+        $db = DB::getInstance();
+        $req = $db->query(
+            "
+                UPDATE product
+                SET vote_number = vote_number + 1 , total_stars = total_stars + $star 
+                WHERE id = $id ; 
+            ;");
+
+
     }
 }
 ?>

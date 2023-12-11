@@ -9,8 +9,11 @@ class Menproduct
     public $content;
     public $img;
     public $sale;
+    public $vote_number;
+    public $total_stars;
 
-    public function __construct($id, $name, $price, $description, $content, $img, $sale)
+
+    public function __construct($id, $name, $price, $description, $content, $img, $sale, $vote_number, $total_stars )
     {
         $this->id = $id;
         $this->name = $name;
@@ -19,26 +22,30 @@ class Menproduct
         $this->content = $content;
         $this->img = $img;
         $this->sale= $sale;
+        $this->vote_number = $vote_number;
+        $this->total_stars = $total_stars;
     }
 
     static function getAll()
     {
         $db = DB::getInstance();
         $req = $db->query("SELECT * FROM menproduct");
-        $menproducts = [];
-        foreach ($req->fetch_all(MYSQLI_ASSOC) as $menproduct)
+        $products = [];
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product)
         {
-            $menproducts[] = new Menproduct(
-                $menproduct['id'],
-                $menproduct['name'],
-                $menproduct['price'],
-                $menproduct['description'],
-                $menproduct['content'],
-                $menproduct['img'],
-                $menproduct['sale']
+            $products[] = new Menproduct(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars']
             );
         }
-        return $menproducts;
+        return $products;
     }
 
     static function get($id)
@@ -46,24 +53,28 @@ class Menproduct
         $db = DB::getInstance();
         $req = $db->query("SELECT * FROM menproduct WHERE id = $id");
         $result = $req->fetch_assoc();
-        $menproduct = new Menproduct(
+        $product = new Menproduct(
             $result['id'],
             $result['name'],
             $result['price'],
             $result['description'],
             $result['content'],
             $result['img'],
-            $result['sale']
+            $result['sale'],
+            $result['vote_numbers'],
+            $result['total_stars']
         );
-        return $menproduct;
+        return $product;
     }
 
     static function insert($name, $price, $description, $content, $img, $sale)
     {
         $db = DB::getInstance();
         $req = $db->query(
-            "INSERT INTO menproduct (name, price, description, content, img, sale)
-            VALUES ('$name', $price, '$description', '$content', '$img', '$sale');");
+            " 
+            INSERT INTO menproduct ( name , price , description , content , img , sale)
+            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale')
+            ;");
         return $req;
     }
 
@@ -81,8 +92,19 @@ class Menproduct
             "
                 UPDATE menproduct
                 SET name = '$name', price = $price, description = '$description', content = '$content', img = '$img' , sale = '$sale'
-                WHERE id = $id
+                WHERE id = $id ; 
             ;");
+    }
+    static function addvotebyid($id,$star){
+        $db = DB::getInstance();
+        $req = $db->query(
+            "
+                UPDATE menproduct
+                SET vote_number = vote_number + 1 , total_stars = total_stars + $star 
+                WHERE id = $id ; 
+            ;");
+
+
     }
 }
 ?>

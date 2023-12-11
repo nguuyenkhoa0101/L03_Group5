@@ -15,4 +15,13 @@ class ProductsController extends BaseController
 		$data = array('products' => $products);
 		$this->render('index', $data);
 	}
+	public function vote(){
+		session_start() ;
+		$id= $_POST['product_id'] ;
+		$star= $_POST['starRating'] ;
+		Product::addvotebyid($id,$star) ;
+
+		header('Location: index.php?page=main&controller=cart&action=index');
+	
+	}
 }

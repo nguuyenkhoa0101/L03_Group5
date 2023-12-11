@@ -89,26 +89,35 @@
             // Lặp qua danh sách sản phẩm và hiển thị card
             foreach ($menproducts as $menproduct) {
                 echo '<div id="card" class="col mb-3">
-                    <a href="index.php?page=main&controller=detail&id=' . $menproduct->id . '&action=index" class="card h-100 text-decoration-none">';
+                        <a href="index.php?page=main&controller=detail&id=' . $menproduct->id . '&action=index" class="card h-100 text-decoration-none">';
                 
                 if ($menproduct->sale) {
                     echo '<div class="badge bg-dark text-light position-absolute" style="top: 0.5rem; right: 0.5rem"> - ' . $menproduct->sale . '%</div>';
                 }
-            
+                
                 echo '<img class="card-img-top" src="' . $menproduct->img . '" alt="..." style="height: 80%; width: auto;">
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <p class="product-name text-muted" style="font-size: 1em">' . $menproduct->name . '</p>
-                            <span class="fw-bold">' . number_format($menproduct->price * (100 - $menproduct->sale) / 100, 0, ',', '.') . ' đ</span>
-                            <span class="text-muted text-decoration-line-through">' . number_format($menproduct->price, 0, ',', '.') . ' đ</span>
-                        </div>
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <p class="product-name text-muted" style="font-size: 1em">' . $menproduct->name . '</p>
+                                <span class="fw-bold">' . number_format($menproduct->price * (100 - $menproduct->sale) / 100, 0, ',', '.') . ' đ</span>
+                                <span class="text-muted text-decoration-line-through">' . number_format($menproduct->price, 0, ',', '.') . ' đ</span>';
+            
+                if ($menproduct->vote_number == 0) {
+                    echo '<p class="product-name text-muted" style="font-size: 1em">' . $menproduct->vote_number . ' lượt đánh giá</p>';
+                } else {
+                    echo '<p class="product-name text-muted" style="font-size: 1em">' . $menproduct->vote_number . ' lượt đánh giá</p>
+                          <p class="product-name text-muted" style="font-size: 1em">' . $menproduct->total_stars / $menproduct->vote_number . ' đánh giá trung bình</p>';
+                }
+            
+                echo '</div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><!-- Optional: Keep this div if you want to maintain the same structure --></div>
                     </div>
-                    </a>
+                  </a>
                 </div>';
             }
+            
             
         ?>
                     </div>

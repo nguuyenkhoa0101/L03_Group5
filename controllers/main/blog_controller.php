@@ -24,8 +24,8 @@ class BlogController extends BaseController
 		$recent = News::recentNews();
 		foreach ($newses as $news)
 		{
-			$news->$comments = Comment::getCommentByNews($news->id);
-			foreach ($news->$comments as $comment)
+			$news->comments = Comment::getCommentByNews($news->id);
+			foreach ($news->comments as $comment)
 			{
 				$comment->replies = Comment::getReply(intval($comment->id));
 			}

@@ -15,4 +15,14 @@ class MenproductsController extends BaseController
 		$data = array('menproducts' => $menproducts);
 		$this->render('index', $data);
 	}
+	public function vote(){
+		session_start() ;
+		$id= $_POST['product_id'] ;
+		$star= $_POST['starRating'] ;
+		Menproduct::addvotebyid($id,$star) ;
+
+		header('Location: index.php?page=main&controller=menproducts&action=index');
+	
+	}
+	
 }

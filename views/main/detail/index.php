@@ -2,6 +2,7 @@
   include_once('views/main/navbar.php');
   $id = $_GET['id'];
 ?>
+
 <div class="container py-2 ">
     <?php         
         foreach ($products as $product) {
@@ -36,6 +37,7 @@
                 </div>
             </div>
         </div>
+        
 
 
         <div class="col-md-12 col-lg-8 col-xl-8 mt-4">
@@ -66,6 +68,7 @@
                     </ul>
                 </ul>
             </div>
+            
          
                 <form action="index.php?page=main&controller=cart&action=submit" method="POST">
                 <input type="hidden" value="<?php echo $product->id ?>" name="product_id">
@@ -89,6 +92,36 @@
         <?php
         }
     ?>
+        <div class="container mt-5">
+  
+  <form action="index.php?page=main&controller=menproducts&action=vote" method = "POST">
+      <div class="mb-3">
+      <input type="hidden" value="<?php echo $id ?>" name="product_id">
+     
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="starRating" id="star1" value="1">
+          <label class="form-check-label" for="star1">1 sao</label>
+      </div>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="starRating" id="star2" value="2">
+          <label class="form-check-label" for="star2">2 sao</label>
+      </div>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="starRating" id="star3" value="3">
+          <label class="form-check-label" for="star3">3 sao</label>
+      </div>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="starRating" id="star4" value="4">
+          <label class="form-check-label" for="star4">4 sao</label>
+      </div>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="starRating" id="star5" value="5">
+          <label class="form-check-label" for="star5">5 sao</label>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+  </form>
+</div>
         <div class="row" style="height: 100px">
         </div>
         <div class="row">

@@ -26,7 +26,9 @@ $controllers = array(
   //Main controller
   'about' => ['index'],
   'sale' => ['index'],
-  'detail' => ['index'],
+  'products' => ['index','vote'],
+  'menproducts' => ['index','vote'],
+  'detail' => ['index','vote'],
   'blog' => ['index'],
   'archive' => ['index'],
   'contact' => ['index'],
