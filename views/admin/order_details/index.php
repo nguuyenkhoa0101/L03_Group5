@@ -169,7 +169,6 @@ require_once('views/admin/content_layouts.php'); ?>
 
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
