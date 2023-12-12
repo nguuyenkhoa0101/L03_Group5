@@ -63,21 +63,15 @@
                         </form>
                     </div>
                     <br>
-                    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Bảng Size
-                    </a>
-                    <div class="quantity">
-                        <p><b>Số lượng:</b></p>
-                        <input type="number" name="quantity" form="product-form" min="1"
-                            oninput="(validity.valid)||(value=1);" value="1">
-                    </div>
+                 
+                    
                     <form action="index.php?page=main&controller=cart&action=submit" method="POST">
                         <input type="hidden" value="<?php echo $product->id ?>" name="product_id">
                         <input type="hidden" value="<?php echo $product->name ?>" name="product_name">
                         <input type="hidden" value="<?php echo $product->img ?>" name="product_image">
                         <input type="hidden" value="<?php echo $product->price ?>" name="product_price">
                         <input type="hidden" value="<?php echo $product->sale ?>" name="product_sale">
-                        <input type="hidden" value="<?php echo 1 ?>" name="product_quantity">
+                       
 
 
                         <div class="mt-2 text-center mb-2 ">

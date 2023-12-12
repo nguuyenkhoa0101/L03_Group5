@@ -69,11 +69,12 @@ class Product
 
     static function insert($name, $price, $description, $content, $img, $sale)
     {
+ 
         $db = DB::getInstance();
         $req = $db->query(
             " 
-            INSERT INTO product ( name , price , description , content , img , sale)
-            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale')
+            INSERT INTO product ( name , price , description , content , img , sale , vote_number , total_stars)
+            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale' ,'0' , '0')
             ;");
         return $req;
     }

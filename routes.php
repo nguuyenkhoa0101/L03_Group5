@@ -5,13 +5,13 @@ $pages = array(
   'admin' => ['layouts', 'members', 'products','womenproducts','menproducts','kidsproducts' ,'news', 'comments','order','order_details']
 );
 $controllers = array(
-  //Admin controller
+
   'errors' => ['index'],
   'layouts' => ['index'], // Bổ sung thêm các hàm trong controllers
   'members' => ['index'],
-  'products' => ['index','add','edit','delete'],
-  'womenproducts' => ['index','add','edit','delete'],
-  'menproducts' => ['index','add','edit','delete'],
+  'products' => ['index','add','edit','delete','vote'],
+  'womenproducts' => ['index','add','edit','delete','vote'],
+  'menproducts' => ['index','add','edit','delete','vote'],
   'kidsproducts' => ['index','add','edit','delete'],
   'news' => ['index','add','edit','delete','hide'],
   'comments' => ['index','hide','add','edit','delete'],
@@ -21,13 +21,8 @@ $controllers = array(
   'login' => ['index', 'check', 'logout'],
   'order' => ['index','order'] ,
   'order_details' => ['index','order_details','confirm'] ,
-  
-
-  //Main controller
   'about' => ['index'],
   'sale' => ['index'],
-  'products' => ['index','vote'],
-  'menproducts' => ['index','vote'],
   'detail' => ['index','vote'],
   'blog' => ['index'],
   'archive' => ['index'],

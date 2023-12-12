@@ -22,4 +22,13 @@ class ProductsController extends BaseController
     $data = array('search_result' => $search_result);
     $this->render('search', $data);
     }
+	public function vote(){
+		session_start() ;
+		$id= $_POST['product_id'] ;
+		$star= $_POST['starRating'] ;
+		Product::addvotebyid($id,$star) ;
+
+		header('Location: index.php?page=main&controller=menproducts&action=index');
+	
+	}
 }

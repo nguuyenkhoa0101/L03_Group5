@@ -50,7 +50,7 @@ require_once('views/admin/content_layouts.php'); ?>
                                         <h5 class="modal-title">Thêm mới sản phẩm</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <form id="form-add-product" action="index.php?page=admin&controller=products&action=add" enctype="multipart/form-data" method="post">
+                                    <form id="form-add-product" action="index.php?page=admin&controller=products&action=add" enctype="multipart/form-data" method="POST">
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-6"><label>Tên sản phẩm</label><input class="form-control my-2" type="text" placeholder="Tên sản phẩm" name="name" required/></div>
@@ -130,7 +130,7 @@ require_once('views/admin/content_layouts.php'); ?>
                                             <h5 class="modal-title">Chỉnh sửa</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <form id="form-edit-product" action="index.php?page=admin&controller=products&action=edit" enctype="multipart/form-data" method="post">
+                                        <form id="form-edit-product" action="index.php?page=admin&controller=products&action=edit" enctype="multipart/form-data" method="POST">
                                             <div class="modal-body">
                                                 <div class="col-12"><label>ID</label> <input class="form-control my-2" type="text" placeholder="Name" name="id" readonly /></div>
                                                 <div class="row">

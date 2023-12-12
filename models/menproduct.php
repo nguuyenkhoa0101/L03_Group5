@@ -67,13 +67,14 @@ class Menproduct
         return $product;
     }
 
-    static function insert($name, $price, $description, $content, $img, $sale)
+    static function insert($name, $price, $description, $content, $img, $sale,  $vote_number,$total_stars )
     {
+        $vote_number = 0 ; $total_stars = 0 ;
         $db = DB::getInstance();
         $req = $db->query(
             " 
-            INSERT INTO menproduct ( name , price , description , content , img , sale)
-            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale')
+            INSERT INTO menproduct ( name , price , description , content , img , sale, vote_number , total_stars)
+            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale' , '$vote_number' , '$total_stars')
             ;");
         return $req;
     }

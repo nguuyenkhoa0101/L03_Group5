@@ -24,7 +24,7 @@ class MenproductsController extends BaseController
         $price= $_POST['price'];
         $description = $_POST['description'];
         $content = $_POST['content'];
-        $target_dir = "assets/images/menproduct/";
+        $target_dir = "assets/images/";
         $path = $_FILES['fileToUpload']['name'];
         $ext = pathinfo($path, PATHINFO_EXTENSION);
         $fileuploadname .= ".";
@@ -44,7 +44,9 @@ class MenproductsController extends BaseController
             echo "Sorry, your file is too large.";
         }
         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-        Menproduct::insert($name, $price, $description, $content, $target_file, $sale);
+        $vote_number = 0;
+        $total_stars = 0 ;
+        Menproduct::insert($name, $price, $description, $content, $target_file, $sale,$vote_number,$total_stars);
         header('Location: index.php?page=admin&controller=menproducts&action=index');
     }
     public function edit(){
@@ -57,15 +59,17 @@ class MenproductsController extends BaseController
         $description = $_POST['description'];
         $content = $_POST['content'];
         $urlcurrent = Menproduct::get((int)$id)->img;
+        $vote_number = 0;
+        $total_stars = 0 ;
         if (!isset($_FILES["fileToUpload"]) || $_FILES['fileToUpload']['tmp_name'][0] == "")
         {
-            Menproduct::update($id, $name, $price, $description, $content, $urlcurrent, $sale);
+            Menproduct::update($id, $name, $price, $description, $content, $urlcurrent, $sale, $vote_number,$total_stars);
             echo "Dữ liệu upload bị lỗi";
             header('Location: index.php?page=admin&controller=menproducts&action=index');
             die;
         }
         else{
-            $target_dir = "assets/images/menproduct/";
+            $target_dir = "assets/images/";
             $path = $_FILES['fileToUpload']['name'];
             $ext = pathinfo($path, PATHINFO_EXTENSION);
             $fileuploadname .= ".";
@@ -86,8 +90,9 @@ class MenproductsController extends BaseController
             }
             $file_pointer = $urlcurrent;
             unlink($file_pointer);
+           
             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-            Menproduct::update($id, $name, $price, $description, $content, $target_file, $sale);
+            Menproduct::update($id, $name, $price, $description, $content, $target_file, $sale, $vote_number,$total_stars);
             header('Location: index.php?page=admin&controller=menproducts&action=index');
         }
     }
