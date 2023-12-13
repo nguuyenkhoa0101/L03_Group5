@@ -826,7 +826,6 @@ close_btn.addEventListener('click', () => {
     cart_tab.classList.remove('active')
 })
 </script>
-<<<<<<< HEAD
 <script>
 const tabs = document.querySelectorAll('.product-tab-btn')
 const all_content = document.querySelectorAll('.product-tab-content')
@@ -872,9 +871,6 @@ $(document).ready(function() {
     });
 });
 </script>
-=======
-
->>>>>>> 380d88b2c8288e1cd3f9b138d2368a5b5cdf7f02
 <?php
    include_once('views/main/footer.php');
 ?>

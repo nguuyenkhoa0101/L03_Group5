@@ -113,7 +113,7 @@ if (isset($_SESSION["shopping_cart"])) {
                     <table>
                         <tr>
                             <td>Tổng sản phẩm</td>
-                            <td style="width: 74%;">1</td>
+                            <td style="width: 74%;"> <?php echo $x ; ?></td>
                         </tr>
                         <tr>
                             <td>Tổng tiền hàng</td>

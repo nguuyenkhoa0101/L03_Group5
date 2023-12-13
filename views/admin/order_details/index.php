@@ -60,7 +60,7 @@ require_once('views/admin/content_layouts.php'); ?>
                             </th>
                             <th class="d-none d-lg-table-cell" style="text-align:center"><?php echo $info['method']?>
                             </th>
-                            <th class="d-none d-lg-table-cell" style="text-align:center"><img
+                            <th class="d-none d-lg-table-cell" style="text-align:center;"><img style=" width: 75px ; height: 75px;"
                                     src="<?php echo $info['proof']?>" alt="proof"> </th>
                         </tbody>
                     </table>

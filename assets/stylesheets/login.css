@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 body{
-    background: url("/BigFarm/assets/images/mike-petrucci-c9FQyqIECds-unsplash.jpg");
+    /* background: url("/BigFarm/assets/images/mike-petrucci-c9FQyqIECds-unsplash.jpg"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body{
     position: relative;
     padding: 20px 20px 30px 20px;
     height: 432.31px;
-    width: 450px;
+        width: 450px;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 30px;
     -webkit-backdrop-filter: blur(15px);
@@ -36,12 +36,7 @@ body{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Thêm đường viền bóng */
 }
-.box-register{
-    position: absolute;
-    width: 85%;
-    right: -350px;
-    transition: .5s ease-in-out;
-}
+
 .top-header{
     text-align: center;
     margin: 10px auto;
