@@ -69,14 +69,12 @@ if (isset($_SESSION["shopping_cart"])) {
                             </td>
                             <td>
                                 <div style="display: flex; align-items: center;">
-                                    <button type="button" class="btn-quantity"
-                                        onclick="decreaseQuantity(<?php echo $value['product_id'] ?>)">-</button>
+                                 
                                     <input type="number" min="1" class="inputsoluong"
                                         style="width: 60px; font-size: 18px;"
                                         name="qty[<?php echo $value['product_id'] ?>]"
                                         value="<?php echo $value['product_quantity'] ?>">
-                                    <button type="button" class="btn-quantity"
-                                        onclick="increaseQuantity(<?php echo $value['product_id'] ?>)">+</button>
+                                  
                                 </div>
                             </td>
                             <td>
