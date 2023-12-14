@@ -28,7 +28,7 @@ class ShoesproductsController extends BaseController
 		$star= $_POST['starRating'] ;
 		Product::addvotebyid($id,$star) ;
 
-		header('Location: index.php?page=main&controller=menproducts&action=index');
+		header('Location: index.php?page=main&controller=shoesproducts&action=index');
 	
 	}
 }
