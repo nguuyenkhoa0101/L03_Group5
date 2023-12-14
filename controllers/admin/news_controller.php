@@ -32,6 +32,9 @@ class NewsController extends BaseController
         header('Location: index.php?page=admin&controller=news&action=index');
     }
     public function delete(){
+        if($_POST['id']){
+            echo "dmm" ;
+        }
         $id = $_POST['id'];
         News::delete($id);
         header('Location: index.php?page=admin&controller=news&action=index');
