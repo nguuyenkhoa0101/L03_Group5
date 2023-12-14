@@ -44,6 +44,12 @@ body{
     text-align: center;
     margin: 10px auto;
 }
+
+.top-header img {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
 .top-header h3{
     font-size: 22px;
     font-weight: 600;
@@ -112,6 +118,10 @@ i{
     font-size: 13px;
     margin: 12px 0 30px 0;
     color: #000;
+}
+
+.remember a {
+    text-decoration: underline;
 }
 .check{
     margin-right: 8px;

@@ -20,7 +20,7 @@
             <form action="index.php?page=main&controller=register&action=submit" method="POST" class="text-right">
                 <div class="register-box" id="regUser">
                     <div class="top-header">
-                        <img src="https://pubcdn.ivymoda.com/ivy2/images/logo.png" alt="">
+                        <img src="https://routine.vn/media/amasty/webp/logo/websites/1/logo-black-2x_png.webp" alt="">
                     </div>
                     <div class="input-group">
                         <div class="name-box">
@@ -53,7 +53,7 @@
                             <label for="regPassword">Password</label>
                             <input type="password" class="input-box" id="pass" name="pass" required
                             pattern="^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                            title="Mật khẩu cần chứa ít nhất một chữ thường, một số và một ký tự đặc biệt.">>
+                            title="Mật khẩu cần chứa ít nhất một chữ thường, một số và một ký tự đặc biệt.">
                             
                             
                         </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="remember">
                         <input type="checkbox" id="formCheck-2" class="check">
-                        <label for="formCheck-2">Ghi nhớ đăng nhập</label>
+                        <label for="formCheck-2">Tôi chấp nhận <a href="#">điều khoản riêng tư và bảo mật</a></label>
                     </div>
                     <div class="input-field">
                         <input type="submit" class="input-submit" value="Đăng Ký">
