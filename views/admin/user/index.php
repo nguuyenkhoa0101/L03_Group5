@@ -144,7 +144,7 @@ require_once('views/admin/content_layouts.php'); ?>
                                     $index = 1;
                                     foreach ($user as $user) {
                                         echo "<tr class='text-center'>";
-                                        echo "<td class='align-middle d-none d-lg-table-cell'>" . $index++ . "</td>";
+                                        echo "<td class='align-middle d-none d-lg-table-cell'>" . $index . "</td>";
                                         echo "<td><img src='$user->profile_photo' class='border rounded-circle p-1' width='72' height='72'></td>";
                                         echo "<td class='align-middle d-none d-lg-table-cell'>" . $user->fname . "</td>";
                                         echo "<td class='align-middle'>" . $user->lname . "</td>";

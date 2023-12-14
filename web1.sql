@@ -64,8 +64,8 @@ CREATE TABLE `comment` (
 
 INSERT INTO `comment` (`id`, `date`, `approved`, `content`, `news_id`, `user_id`, `parent`) VALUES
 (1, '2021-12-12 00:00:00', 0, 'Hello World', 1, 'hihi@gmail.com', NULL),
-(2, '2021-12-12 00:00:00', 1, 'NSFW', 1, 'hihihi@gmail.com', NULL),
-(3, '2021-12-12 00:00:00', 1, 'Đinh Vũ Hà đã đánh giá', 2, 'nani@hcmut.edu.vn', NULL);
+(2, '2021-12-12 00:00:00', 1, 'NSFW', 1, 'hihi@gmail.com', NULL),
+(3, '2021-12-12 00:00:00', 1, 'Đinh Vũ Hà đã đánh giá', 2, 'kaicongchua@gmail.com', NULL);
 
 
 -- --------------------------------------------------------
@@ -299,9 +299,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`) VALUES
-('admin@hcmut.edu.vn', NULL, 'Nguyen Van', 'A', 1, 15, '0123456789', NULL, NULL, ''),
+('hihi@gmail.com', NULL, 'Michael', 'Jordan', 1, 15, '0123456789', NULL, NULL, ''),
 ('kaicongchua@gmail.com', 'public/img/default/avtdf.jpg', 'Kai', 'Harvertz', 1, 19, '0856684801', '2023-12-12 00:41:22', '2023-12-12 00:41:22', '8fa5f7c11a174d22e187c65963e053d3827dc4701281f4e0f706577cb47a7cce'),
-('user@hcmut.edu.vn', NULL, 'Nguyen Van', 'B', 0, 30, '0123456789', NULL, NULL, '');
+('hihihi@gmail.com', NULL, 'Kim', 'Jong Un', 0, 30, '0123456789', NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -374,7 +374,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `company`

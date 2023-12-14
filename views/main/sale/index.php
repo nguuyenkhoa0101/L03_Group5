@@ -77,7 +77,7 @@ include_once('views/main/navbar.php');
                         <?php 
             // Lặp qua danh sách sản phẩm và hiển thị card
             foreach ($products as $product) {
-                if ($product->sale){
+                if ($product->sale >= 30){
                     echo '
                         <div id="card" class="col mb-3">
                             <a href="index.php?page=main&controller=detail&id='. $product->id .'&action=index" class="card h-100 text-decoration-none">

@@ -1,6 +1,15 @@
 <?php 
    include_once('views/main/navbar.php');
 ?>
+<?php
+ if (isset($_POST['search_button'])) {
+             // Nếu nút tìm kiếm được nhấn
+                 $search_keyword = $_POST['search_product'];
+                 $search_result = Product::search($search_keyword);
+
+                
+                }
+               ?>
 <main>
     <style>
     .card-img-top:hover {
@@ -37,7 +46,11 @@
         <div class="container">
             <a href="index.php?page=main&controller=layouts&action=index" class="fw-bold me-2">Home</a>&nbsp;>
             <a href="index.php?page=main&controller=products&action=index"
-                class=" fw-bold me-2">&nbsp;&nbsp;Sản phẩm tìm kiếm</a>
+                class=" fw-bold me-2">&nbsp;&nbsp;Sản phẩm tìm kiếm theo từ khóa <?php echo  $search_keyword ;?></a>&nbsp;
+           
+           
+           
+            
         </div>
     </div>
     <div class="container" style="margin-top: 10px">
@@ -84,6 +97,8 @@
             </div>
         </div>
     </div>
+    
+
 
 
 
@@ -127,7 +142,7 @@
                         class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
                         <?php 
             // Lặp qua danh sách sản phẩm và hiển thị card
-            foreach ($products as $product) {
+            foreach ($search_result as $product) {
                 echo '<div id="card" class="col mb-3">
                         <a href="index.php?page=main&controller=detail&id=' . $product->id . '&action=index" class="card h-100 text-decoration-none">';
                 
