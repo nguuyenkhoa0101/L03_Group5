@@ -35,6 +35,7 @@ if (isset($_SESSION["shopping_cart"])) {
                     <tr>
                         <th style="width:180px;">ẢNH</th>
                         <th style="width:200px;">TÊN SẢN PHẨM</th>
+                        <th>Size</th>
                         <th>GIÁ</th>
                         <th style="width:80px;padding-left:30px;">SALE</th>
                         <th>SỐ LƯỢNG</th>
@@ -45,8 +46,8 @@ if (isset($_SESSION["shopping_cart"])) {
                         <?php 
                     if(isset($_SESSION["shopping_cart"])){
                         
-                    foreach($_SESSION['shopping_cart'] as $key => $value){ 
-                    $temp = $value['product_quantity'] * ($value['product_price'] * (1-$value['product_sale']/100)) ;
+                        foreach($_SESSION['shopping_cart'] as $key => $value){ 
+                            $temp = $value['product_quantity'] * ($value['product_price'] * (1-$value['product_sale']/100)) ;
                    
                     $total += $temp ; 
                         
@@ -61,6 +62,10 @@ if (isset($_SESSION["shopping_cart"])) {
                             </td>
                             <td>
                                 <p style="text-transform:capitalize;text-align:center;">
+                                    <?php echo $value['product_size'] ?></p>
+                            </td>
+                            <td>
+                                <p style="text-transform:capitalize;text-align:center;">
                                     <?php echo $value['product_price'] ?></p>
                             </td>
                             <td>
@@ -69,12 +74,12 @@ if (isset($_SESSION["shopping_cart"])) {
                             </td>
                             <td>
                                 <div style="display: flex; align-items: center;">
-                                 
+
                                     <input type="number" min="1" class="inputsoluong"
                                         style="width: 60px; font-size: 18px;"
                                         name="qty[<?php echo $value['product_id'] ?>]"
                                         value="<?php echo $value['product_quantity'] ?>">
-                                  
+
                                 </div>
                             </td>
                             <td>
@@ -101,6 +106,7 @@ if (isset($_SESSION["shopping_cart"])) {
                                 class="btn btn-sm btn-primary">
                                 Update </button>
                         </div>
+
                     </form>
 
                 </table>

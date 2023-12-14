@@ -40,7 +40,8 @@ class CartController extends BaseController
 					'product_image' => $_POST["product_image"],
 					'product_price' => $_POST["product_price"],
 					'product_sale' => $_POST["product_sale"],
-					'product_quantity' => $_POST["product_quantity"]
+					'product_quantity' => $_POST["product_quantity"],
+					'product_size' => $_POST["size"]
 				);
 				$_SESSION["shopping_cart"][] = $item ;
 
@@ -54,7 +55,8 @@ class CartController extends BaseController
 				'product_image' => $_POST["product_image"],
 				'product_price' => $_POST["product_price"],
 				'product_sale' => $_POST["product_sale"],
-				'product_quantity' => $_POST["product_quantity"]
+				'product_quantity' => $_POST["product_quantity"],
+				'product_size' => $_POST["size"]
 			);
 			$_SESSION["shopping_cart"][] = $item ;
 
@@ -121,10 +123,11 @@ class CartController extends BaseController
 		$hour = date("h:i:sa") ;
 		$order_date = $date .' '. $hour ;
 		$order_status = 0 ;
+		$mail = $_POST['email'];
 		echo $order_code ;
 		echo $order_date ;
 		echo $order_status ;
-		$result_order = Order::insert($order_code,$order_date,$order_status); 
+		$result_order = Order::insert($order_code,$order_date,$order_status,$mail); 
 		
 		$id = (string)date("Y_m_d_h_i_sa"); 
         $fileuploadname = (string)$id;
@@ -153,11 +156,11 @@ class CartController extends BaseController
 			 foreach($_SESSION["shopping_cart"] as $key => $value){
 				
 					
-					$product_id = $value['product_id'] ;
-					$product_quantity = $value['product_quantity'] ;
-					
-					
-					$result_order_details = Order::insert_details($order_code,$product_id,$product_quantity,$name,$phone,$email,$location,$method,$target_file); 
+				$product_id = $value['product_id'] ;
+				$product_quantity = $value['product_quantity'] ;
+				$product_size = $value['product_size'];
+				
+				$result_order_details = Order::insert_details($order_code,$product_id,$product_quantity,$product_size,$name,$phone,$email,$location,$method,$target_file); 
 
 			 }
 			 unset($_SESSION["shopping_cart"]);
@@ -168,14 +171,19 @@ class CartController extends BaseController
 			header('Location: index.php?page=main&controller=cart&action=index');
 
 		}
-	
-
-
-
-
-
 	}
-
-
+	
+	public function Listorder()
+	{
+		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+			$mail = $_POST['user_mail'];
+			$orders = Order::list_order_user($mail);
+	
+			$data['order'] = $orders;
+			return $data['order'];
+		}
+	
+		return []; // Trả về một mảng rỗng nếu không có dữ liệu đầu vào
+	}
 
 }

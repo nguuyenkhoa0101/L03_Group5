@@ -259,5 +259,166 @@ class Product
 
 
     }
+    public static function sortByPriceHighToLowMen()
+    {
+        $db = DB::getInstance();
+        $req = $db->query("SELECT * FROM product WHERE typeid = 0 ORDER BY (price - (price * sale / 100)) DESC");
+        $products = [];
+
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+            $products[] = new Product(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['img1'],
+                $product['img2'],
+                $product['img3'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars'],
+                $product['typeid']
+            );
+        }
+
+        return $products;
+    }
+
+    public static function sortByPriceLowToHighMen()
+    {
+        $db = DB::getInstance();
+        $req = $db->query("SELECT * FROM product  WHERE typeid = 0 ORDER BY (price - (price * sale / 100)) ASC");
+        $products = [];
+
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+            $products[] = new Product(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['img1'],
+                $product['img2'],
+                $product['img3'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars'],
+                $product['typeid']
+            );
+        }
+
+        return $products;
+    }
+
+    public static function sortByPriceHighToLowWomen()
+    {
+        $db = DB::getInstance();
+        $req = $db->query("SELECT * FROM product WHERE typeid = 1 ORDER BY (price - (price * sale / 100)) DESC");
+        $products = [];
+
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+            $products[] = new Product(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['img1'],
+                $product['img2'],
+                $product['img3'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars'],
+                $product['typeid']
+            );
+        }
+
+        return $products;
+    }
+
+    public static function sortByPriceLowToHighWomen()
+    {
+        $db = DB::getInstance();
+        $req = $db->query("SELECT * FROM product  WHERE typeid = 1 ORDER BY (price - (price * sale / 100)) ASC");
+        $products = [];
+
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+            $products[] = new Product(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['img1'],
+                $product['img2'],
+                $product['img3'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars'],
+                $product['typeid']
+            );
+        }
+
+        return $products;
+    }
+
+    public static function sortByPriceHighToLowShoes()
+    {
+        $db = DB::getInstance();
+        $req = $db->query("SELECT * FROM product WHERE typeid = 2 ORDER BY (price - (price * sale / 100)) DESC");
+        $products = [];
+
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+            $products[] = new Product(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['img1'],
+                $product['img2'],
+                $product['img3'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars'],
+                $product['typeid']
+            );
+        }
+
+        return $products;
+    }
+
+    public static function sortByPriceLowToHighShoes()
+    {
+        $db = DB::getInstance();
+        $req = $db->query("SELECT * FROM product  WHERE typeid = 2 ORDER BY (price - (price * sale / 100)) ASC");
+        $products = [];
+
+        foreach ($req->fetch_all(MYSQLI_ASSOC) as $product) {
+            $products[] = new Product(
+                $product['id'],
+                $product['name'],
+                $product['price'],
+                $product['description'],
+                $product['content'],
+                $product['img'],
+                $product['img1'],
+                $product['img2'],
+                $product['img3'],
+                $product['sale'],
+                $product['vote_number'],
+                $product['total_stars'],
+                $product['typeid']
+            );
+        }
+
+        return $products;
+    }
 }
 ?>

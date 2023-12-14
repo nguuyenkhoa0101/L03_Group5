@@ -96,6 +96,8 @@ require_once('views/admin/content_layouts.php'); ?>
                                                 </th>
                                                 <th class="d-none d-lg-table-cell">Hình ảnh</th>
                                                 <th class="d-none d-lg-table-cell">Số lượng</th>
+                                                <th class="d-none d-lg-table-cell">Size
+                                                </th>
                                                 <th class="d-none d-lg-table-cell">Đơn giá</th>
                                                 <th class="d-none d-lg-table-cell">Khuyến mãi
                                                 </th>
@@ -131,6 +133,9 @@ require_once('views/admin/content_layouts.php'); ?>
                                                 </td>
                                                 <td class="d-none d-lg-table-cell">
                                                     <?php echo $ord['product_quantity'] ?>
+                                                </td>
+                                                <td class="d-none d-lg-table-cell">
+                                                    <?php echo $ord['product_size'] ?>
                                                 </td>
                                                 <td class="d-none d-lg-table-cell">
                                                     <?php echo $ord['price'] ?>

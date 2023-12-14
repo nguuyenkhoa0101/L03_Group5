@@ -1,7 +1,7 @@
 <?php
 $pages = array(
   'error' => ['errors'],
-  'main' => ['layouts', 'about', 'blog', 'archive', 'contact', 'login', 'register', 'detail', 'sale', 'detail_blog','cart'],
+  'main' => ['layouts', 'about', 'blog', 'archive', 'contact', 'login', 'register', 'detail', 'sale', 'detail_blog','cart','log'],
   'admin' => ['layouts', 'members', 'products','menproducts','womenproducts','shoesproducts','news', 'comments','order','order_details']
 );
 $controllers = array(
@@ -10,9 +10,9 @@ $controllers = array(
   'layouts' => ['index'], 
   'members' => ['index'],
   'products' => ['index','add','edit','delete','vote'],
-  'menproducts' => ['index','add','edit','delete','vote'],
-  'womenproducts' => ['index','add','edit','delete','vote'],
-  'shoesproducts' => ['index','add','edit','delete','vote'],
+  'menproducts' => ['index','add','edit','delete','vote','sortByPriceHighToLow','sortByPriceLowToHigh'],
+  'womenproducts' => ['index','add','edit','delete','vote','sortByPriceHighToLow','sortByPriceLowToHigh'],
+  'shoesproducts' => ['index','add','edit','delete','vote','sortByPriceHighToLow','sortByPriceLowToHigh'],
   'news' => ['index','add','edit','delete','hide'],
   'comments' => ['index','hide','add','edit','delete'],
   'admin' => ['index', 'add', 'edit', 'delete'],
@@ -31,10 +31,8 @@ $controllers = array(
   'blog' => ['index', 'comment', 'reply'],
   'register' => ['index', 'submit', 'editInfo'],
   'cart' => ['index','submit','update','order'],
-); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
-
-// Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi
-// thì trang báo lỗi sẽ được gọi ra.
+  'log' => ['index']
+); 
 if (!array_key_exists($page, $pages) || !array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])) {
   $page = 'error';
   $controller = 'errors';
@@ -44,10 +42,7 @@ if($page=='error'){
   $controller = 'errors';
   $action = 'index';
 }
-
-// Nhúng file định nghĩa controller vào để có thể dùng được class định nghĩa trong file đó
 include_once('controllers/' .$page ."/" . $controller . '_controller.php');
-// Tạo ra tên controller class từ các giá trị lấy được từ URL sau đó gọi ra để hiển thị trả về cho người dùng.
 $klass = str_replace('_', '', ucwords($controller, '_')) . 'Controller';
 $controller = new $klass;
 $controller->$action();

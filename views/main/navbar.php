@@ -115,11 +115,12 @@ if (!isset($_SESSION)) {
               <input class="form-control my-2" type="number" placeholder="Số điện thoại" name="phone" value="' . $data->phone . '"/>
             </div>
             <div class="form-group">
-              <label>Hình ảnh hiện tại </label>
+              <label>Đường dẫn hiện tại </label>
               <input class="form-control my-2" type="text" name="img" readonly value="' . $data->profile_photo . '" />
             </div>
             <div class="form-group">
-              <label>Hình ảnh mới</label>&nbsp
+            <label>Hình ảnh hiện tại </label> <br>
+            <img src = "'. $data->profile_photo .'" style = "height: 100px; width: 100px;">
               <input type="file" class="form-control my-2" name="fileToUpload" id="fileToUpload" />
             </div>
           </div>
@@ -158,7 +159,8 @@ if (!isset($_SESSION)) {
                             <a class="nav-link" href="index.php?page=main&controller=menproducts&action=index">NAM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=main&controller=shoesproducts&action=index">GIÀY HOT</a>
+                            <a class="nav-link" href="index.php?page=main&controller=shoesproducts&action=index">GIÀY
+                                HOT</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=main&controller=sale&action=index"
@@ -171,6 +173,10 @@ if (!isset($_SESSION)) {
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=main&controller=contact&action=index">LIÊN HỆ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=main&controller=about&action=index">VỀ CHÚNG
+                                TÔI</a>
+                        </li>
                     </ul>
                     <form class="search_product d-flex" action="index.php?page=main&controller=products&action=index"
                         method="post" autocomplete="off">
@@ -181,16 +187,18 @@ if (!isset($_SESSION)) {
                     </form>
                     <?php if (!isset($_SESSION["guest"])) { ?>
                     <a href="index.php?page=main&controller=register&action=index" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Đăng ký" class="nav-link"><i class="bi bi-person-add"
-                            style="font-size: 20px;"></i></a>
+                        data-bs-placement="bottom" title="Đăng ký" class="nav-link"><i class="fas fa-user-plus"
+                            style="font-size: 18px;"></i></a>
                     <a href="index.php?page=main&controller=login&action=index" data-bs-toggle="tooltip"
                         data-bs-placement="bottom" title="Đăng nhập" class="nav-link box-arrow-in-right"><i
-                            class="bi bi-person" style="font-size: 20px;"></i></a>
+                            class="fas fa-user" style="font-size: 18px;"></i></a>
                     <?php } else { ?>
                     <a href="" data-bs-toggle="modal" data-bs-target="#EditUserModal" class="nav-link"><i
-                            class="bi bi-person" style="font-size: 20px;"></i></a>
+                            class="fas fa-edit" style="font-size: 18px;"></i></a>
                     <a href="index.php?page=main&controller=login&action=logout" class="nav-link box-arrow-in-right"><i
-                            class="bi bi-person" style="font-size: 20px;"></i></a>
+                            class="fa fa-sign-out" style="font-size: 18px;"></i></a>
+                    <a href="index.php?page=main&controller=log&action=index" class="nav-link box-arrow-in-right"><i
+                            class="fa fa-history" style="font-size: 18px;"></i></a>
                     <?php } ?>
                     <div>
                         <li id="cart" class="menu">
@@ -198,7 +206,7 @@ if (!isset($_SESSION)) {
                                 <?php if(isset($_SESSION["guest"])) {?>
                                 href="index.php?page=main&controller=cart&action=index" <?php } else ?>
                                 href="index.php?page=main&controller=login&action=index">
-                                <i class="bi bi-cart" style="font-size:1rem"></i>
+                                <i class="fa fa-shopping-bag" style="font-size: 18px;"></i>
                             </a>
                         </li>
                     </div>

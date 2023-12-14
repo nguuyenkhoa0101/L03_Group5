@@ -91,41 +91,18 @@
     <div class="container-fluid py-2" style="margin-top: 10px">
         <div class="container-fluid px-4 px-lg-6 mt-4">
             <div style="display: flex; justify-content: flex-end; margin-top: 10px">
-                <select name="" id=""
-                    style="margin-left: auto; border-radius: 10px;  height: 30px; width: 300px; border-color: #ccc;">
-                    <option value="">Sắp xếp theo</option>
-                    <option value="">Giá cao đến thấp</option>
-                    <option value="">Giá thấp đến cao</option>
+                <select id="sortOption" name=""
+                    style="margin-left: auto; border-radius: 10px; height: 30px; width: 300px; border-color: #ccc;"
+                    onchange="sortProducts()">
+                    <option value="default">Sắp xếp theo</option>
+                    <option value="highToLow">Giá cao đến thấp</option>
+                    <option value="lowToHigh">Giá thấp đến cao</option>
                 </select>
             </div>
-            <div class="row" style="margin-top: 30px">
-
-                <!-- Bộ lọc bên trái -->
-                <div class="col-md-2 mb-3">
-                    <label for="price">MỨC GIÁ</label>
-                    <div class="price-option">
-                        <input type="checkbox" id="under-1000000">
-                        <label for="under-1000000">&nbsp;Giá dưới 1,000,000₫</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="checkbox" id="1000000-2000000">
-                        <label for="1000000-2000000">&nbsp;1,000,000₫ - 2,000,000₫</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="checkbox" id="2000000-3000000">
-                        <label for="2000000-3000000">&nbsp;2,000,000₫ - 3,000,000₫</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="checkbox" id="over-3000000">
-                        <label for="over-3000000">&nbsp;Giá trên 3,000,000₫</label>
-                    </div>
-                </div>
-
-                <!-- Các card bên phải -->
-                <div class="col-md-10">
-                    <div id="card-content"
-                        class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
-                        <?php 
+            <div class="row" style="margin-top: 30px; padding-left: 60px">
+                <div id="card-content"
+                    class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
+                    <?php 
             // Lặp qua danh sách sản phẩm và hiển thị card
             foreach ($shoesproducts as $shoesproduct) {
                 echo '<div id="card" class="col mb-3">
@@ -159,8 +136,8 @@
             }
             
         ?>
-                    </div>
                 </div>
+
 
 
             </div>
@@ -224,14 +201,16 @@
 
             currentPage = whichPage;
 
-            $("#card-content #card").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage)
+            $("#card-content #card").hide().slice((currentPage - 1) * limitPerPage, currentPage *
+                    limitPerPage)
                 .show();
 
             $(".pagination li").slice(1, -1).remove();
 
             getPageList(totalPages, currentPage, paginationSize).forEach(item => {
                 $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
-                    .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
+                    .toggleClass("active", item === currentPage).append($("<a>").addClass(
+                            "page-link")
                         .attr({
                             href: "javascript:void(0)"
                         }).text(item || "...")).insertBefore(".next-page");
@@ -243,7 +222,8 @@
         }
 
         $(".pagination").append(
-            $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link")
+            $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass(
+                    "page-link")
                 .attr({
                     href: "javascript:void(0)"
                 }).text("Prev")),
@@ -268,6 +248,20 @@
             return showPage(currentPage - 1);
         });
     });
+    </script>
+    <script>
+    function sortProducts() {
+        var sortOption = document.getElementById("sortOption");
+        var selectedValue = sortOption.value;
+
+        // Xử lý sự kiện khi lựa chọn giá trị
+        if (selectedValue === "highToLow") {
+            window.location.href = 'index.php?page=main&controller=shoesproducts&action=sortByPriceHighToLow';
+        } else if (selectedValue === "lowToHigh") {
+            window.location.href = 'index.php?page=main&controller=shoesproducts&action=sortByPriceLowToHigh';
+        }
+        // Các trường hợp sắp xếp khác nếu cần
+    }
     </script>
 </main>
 

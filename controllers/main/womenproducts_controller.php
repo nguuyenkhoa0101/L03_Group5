@@ -31,4 +31,16 @@ class WomenproductsController extends BaseController
 		header('Location: index.php?page=main&controller=womenproducts&action=index');
 	
 	}
+	public function sortByPriceHighToLow()
+    {
+        $womenproducts = Product::sortByPriceHighToLowWomen();
+        $data = array('womenproducts' => $womenproducts);
+        $this->render('index', $data);
+    }
+	public function sortByPriceLowToHigh()
+    {
+        $womenproducts = Product::sortByPriceLowToHighWomen();
+        $data = array('womenproducts' => $womenproducts);
+        $this->render('index', $data);
+    }
 }

@@ -4,6 +4,12 @@
   foreach ($products as $product) {
     if ($id == $product->id){
 ?>
+<style>
+.card-img-top:hover {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+</style>
 <div class="container-fluid py-2" style="margin-top: 100px; background-color: #f6f6f6">
     <div class="container">
         <a href="index.php?page=main&controller=layouts&action=index" class="fw-bold me-2">Home</a>&nbsp;>
@@ -43,7 +49,7 @@
                                 <div class="carousel-item active">
                                     <img id="fullImage" src="<?php echo $product->img1;?>" alt="">
                                 </div>
-                                
+
                                 <div class="carousel-item">
                                     <img id="fullImage" src="<?php echo $product->img2;?>" alt="">
                                 </div>
@@ -79,8 +85,7 @@
                             <p><i class="bi bi-truck"></i> Free shipping cho đơn hàng từ 699k (Tự động áp dụng khi thoả
                                 điều kiện)</p>
                             <p><i class="bi bi-gift"></i> Với mỗi hóa đơn từ 699k, khách hàng sẽ được liên hệ để nhận
-                                quà tặng là một sản phẩm
-                                Invisible Boxer</p>
+                                quà tặng là một đôi Nike Air Jordan 1 Netro High OG</p>
                         </div>
                     </div>
                     <div class="product-size">
@@ -95,7 +100,7 @@
                                 </a>
                             </div>
                         </div>
-                        <form id="product-form" method="post">
+                        <form action="index.php?page=main&controller=cart&action=submit" method="POST">
                             <div class="product-size-input">
                                 <label>
                                     <input type="radio" name="size" value="S" checked>
@@ -118,25 +123,24 @@
                                     <span>XXL</span>
                                 </label>
                             </div>
-                        </form>
+
                     </div>
                     <br>
 
 
-                    <form action="index.php?page=main&controller=cart&action=submit" method="POST">
-                        <input type="hidden" value="<?php echo $product->id ?>" name="product_id">
-                        <input type="hidden" value="<?php echo $product->name ?>" name="product_name">
-                        <input type="hidden" value="<?php echo $product->img ?>" name="product_image">
-                        <input type="hidden" value="<?php echo $product->price ?>" name="product_price">
-                        <input type="hidden" value="<?php echo $product->sale ?>" name="product_sale">
-      
+
+                    <input type="hidden" value="<?php echo $product->id ?>" name="product_id">
+                    <input type="hidden" value="<?php echo $product->name ?>" name="product_name">
+                    <input type="hidden" value="<?php echo $product->img ?>" name="product_image">
+                    <input type="hidden" value="<?php echo $product->price ?>" name="product_price">
+                    <input type="hidden" value="<?php echo $product->sale ?>" name="product_sale">
 
 
 
-                        <div class="mt-2  mb-2 ">
-                            <input id="addToCartBtn" class="addCart" type="submit" name="addcart"
-                                value="Thêm vào giỏ hàng">
-                        </div>
+
+                    <div class="mt-2  mb-2 ">
+                        <input id="addToCartBtn" class="addCart" type="submit" name="addcart" value="Thêm vào giỏ hàng">
+                    </div>
                     </form>
                     <div class="product-in4">
                         <div class="row">
@@ -226,149 +230,158 @@
                             <!-- <img src="https://ivymoda.com/assets/images/image-down.png" alt=""> -->
                             THÔNG TIN SẢN PHẨM
                         </div>
-                        <?php if($product->typeid == 0) { ?>
+                        <?php if(isset($_SESSION["guest"])){
+                         if($product->typeid == 0) { ?>
                         <form action="index.php?page=main&controller=menproducts&action=vote" method="POST">
-                        <?php } ?>
-                        <?php if($product->typeid == 1) { ?>
-                        <form action="index.php?page=main&controller=womenproducts&action=vote" method="POST">
-                        <?php } ?>
-                        <?php if($product->typeid == 2) { ?>
-                        <form action="index.php?page=main&controller=shoesproducts&action=vote" method="POST">
-                        <?php } ?>
-                            <div class="mb-3">
-                                <input type="hidden" value="<?php echo $id ?>" name="product_id">
+                            <?php } ?>
+                            <?php if($product->typeid == 1) { ?>
+                            <form action="index.php?page=main&controller=womenproducts&action=vote" method="POST">
+                                <?php } ?>
+                                <?php if($product->typeid == 2) { ?>
+                                <form action="index.php?page=main&controller=shoesproducts&action=vote" method="POST">
+                                    <?php } ?>
+                                    <div class="mb-3">
+                                        <input type="hidden" value="<?php echo $id ?>" name="product_id">
 
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="starRating" id="star1" value="1">
-                                    <label class="form-check-label" for="star1">1 sao</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="starRating" id="star2" value="2">
-                                    <label class="form-check-label" for="star2">2 sao</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="starRating" id="star3" value="3">
-                                    <label class="form-check-label" for="star3">3 sao</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="starRating" id="star4" value="4">
-                                    <label class="form-check-label" for="star4">4 sao</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="starRating" id="star5" value="5">
-                                    <label class="form-check-label" for="star5">5 sao</label>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
-                        </form>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="starRating" id="star1"
+                                                value="1">
+                                            <label class="form-check-label" for="star1">1 sao</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="starRating" id="star2"
+                                                value="2">
+                                            <label class="form-check-label" for="star2">2 sao</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="starRating" id="star3"
+                                                value="3">
+                                            <label class="form-check-label" for="star3">3 sao</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="starRating" id="star4"
+                                                value="4">
+                                            <label class="form-check-label" for="star4">4 sao</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="starRating" id="star5"
+                                                value="5">
+                                            <label class="form-check-label" for="star5">5 sao</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+                                </form>
+                                <?php } ?>
 
-                        <div class="product-detail-container activeB">
-                            <div class="product-tab-box">
-                                <button class="product-tab-btn active">Giới thiệu</button>
-                                <button class="product-tab-btn">Chi tiết</button>
-                                <button class="product-tab-btn">Bảo quản</button>
-                                <div class="line"></div>
-                            </div>
+                                <div class="product-detail-container activeB">
+                                    <div class="product-tab-box">
+                                        <button class="product-tab-btn active">Giới thiệu</button>
+                                        <button class="product-tab-btn">Chi tiết</button>
+                                        <button class="product-tab-btn">Bảo quản</button>
+                                        <div class="line"></div>
+                                    </div>
 
-                            <div class="product-content-box">
-                                <div class="product-tab-content active">
-                                    <p>Áo sơ mi cổ trụ, thiết kế phối bèo tiểu thư phù hợp cho các nàng
-                                        công sở yêu
-                                        thích kiểu nữ tính dịu dàng. </p>
-                                    <br>
-                                    <p>Tay áo dài, có xếp ly nhỏ tạo độ bồng nhẹ. Viền cổ tay nhỏ, đính
-                                        khuy kim loại cố
-                                        định, mang đến sự thanh thoát, khá tinh tế.</p>
-                                    <br>
-                                    <p>Áo lựa chọn chất liệu lụa mềm mại, mặc nhẹ và thoải mái. Bạn hãy
-                                        mix áo cùng quần
-                                        Tây, chân váy...để có ngay một Outfit thời thượng khi đi làm hay
-                                        đi gặp mặt bạn
-                                        bè. </p>
-                                    <br>
-                                    <p style="font-weight: bold;">Thông tin mẫu</p>
-                                    <br>
-                                    <p><span style="font-weight: bold;">Chiều cao</span>: 167 cm</p>
-                                    <br>
-                                    <p><span style="font-weight: bold;">Cân nặng</span>: 50 kg</p>
-                                    <br>
-                                    <p><span style="font-weight: bold;">Số đo ba vòng</span>: 83-65-93
-                                        cm</p>
-                                    <br>
-                                    <p>Mẫu mặc size M Lưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh
-                                        lệch nhỏ so với ảnh
-                                        do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình
-                                        máy tính/ điện
-                                        thoại.</p>
+                                    <div class="product-content-box">
+                                        <div class="product-tab-content active">
+                                            <p>Áo sơ mi cổ trụ, thiết kế phối bèo tiểu thư phù hợp cho các nàng
+                                                công sở yêu
+                                                thích kiểu nữ tính dịu dàng. </p>
+                                            <br>
+                                            <p>Tay áo dài, có xếp ly nhỏ tạo độ bồng nhẹ. Viền cổ tay nhỏ, đính
+                                                khuy kim loại cố
+                                                định, mang đến sự thanh thoát, khá tinh tế.</p>
+                                            <br>
+                                            <p>Áo lựa chọn chất liệu lụa mềm mại, mặc nhẹ và thoải mái. Bạn hãy
+                                                mix áo cùng quần
+                                                Tây, chân váy...để có ngay một Outfit thời thượng khi đi làm hay
+                                                đi gặp mặt bạn
+                                                bè. </p>
+                                            <br>
+                                            <p style="font-weight: bold;">Thông tin mẫu</p>
+                                            <br>
+                                            <p><span style="font-weight: bold;">Chiều cao</span>: 167 cm</p>
+                                            <br>
+                                            <p><span style="font-weight: bold;">Cân nặng</span>: 50 kg</p>
+                                            <br>
+                                            <p><span style="font-weight: bold;">Số đo ba vòng</span>: 83-65-93
+                                                cm</p>
+                                            <br>
+                                            <p>Mẫu mặc size M Lưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh
+                                                lệch nhỏ so với ảnh
+                                                do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình
+                                                máy tính/ điện
+                                                thoại.</p>
+                                        </div>
+
+                                        <div class="product-tab-content">
+                                            <p>Khi hoàn thành mua sắm tại Website, đơn hàng sẽ lập tức được đóng gói và
+                                                chuẩn bị
+                                                tiến hành giao hàng.</p>
+                                            <br>
+                                            <p>Hàng đặt sẽ được chuyển giao cho bên thứ ba và xác nhận sẽ được giao chậm
+                                                nhất là
+                                                5 ngày cho một đơn hàng.</p>
+                                            <br>
+                                        </div>
+
+                                        <div class="product-tab-content">
+                                            <p>Chi tiết bảo quản sản phẩm:</p>
+                                            <br>
+                                            <p style="font-weight: bold;">* Các sản phẩm thuộc dòng cao cấp
+                                                (Senora) và áo khoác
+                                                (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.
+                                            </p>
+                                            <br>
+                                            <p>* Vải dệt kim: sau khi giặt sản phẩm phải được phơi ngang tránh
+                                                bai giãn.</p>
+                                            <br>
+                                            <p>* Vải voan, lụa, chiffon nên giặt bằng tay.</p>
+                                            <br>
+                                            <p>* Vải thô, tuytsi, kaki không có phối hay trang trí đá cườm thì
+                                                có thể giặt máy.
+                                            </p>
+                                            <br>
+                                            <p>* Vải thô, tuytsi, kaki có phối màu tương phản hay trang trí
+                                                voan, lụa, đá cườm
+                                                thì cần giặt tay.</p>
+                                            <br>
+                                            <p>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu
+                                                jeans. Nếu giặt thì
+                                                nên lộn trái sản phẩm khi giặt, đóng khuy, kéo khóa, không nên
+                                                giặt chung cùng
+                                                đồ sáng màu, tránh dính màu vào các sản phẩm khác. </p>
+                                            <br>
+                                            <p>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu,
+                                                phân biệt màu và
+                                                loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm
+                                                với xà phòng có
+                                                chất tẩy mạnh, nên giặt cùng xà phòng pha loãng.</p>
+                                            <br>
+                                            <p>* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt
+                                                nhẹ, vắt mức trung
+                                                bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi
+                                                giặt.</p>
+                                            <br>
+                                            <p>* Nên phơi sản phẩm tại chỗ thoáng mát, tránh ánh nắng trực tiếp
+                                                sẽ dễ bị phai
+                                                bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm gió sẽ
+                                                giữ màu vải tốt
+                                                hơn.</p>
+                                            <br>
+                                            <p>* Những chất vải 100% cotton, không nên phơi sản phẩm bằng mắc áo
+                                                mà nên vắt
+                                                ngang sản phẩm lên dây phơi để tránh tình trạng rạn vải.</p>
+                                            <br>
+                                            <p>* Khi ủi sản phẩm bằng bàn là và sử dụng chế độ hơi nước sẽ làm
+                                                cho sản phẩm dễ
+                                                ủi phẳng, mát và không bị cháy, giữ màu sản phẩm được đẹp và bền
+                                                lâu hơn. Nhiệt
+                                                độ của bàn là tùy theo từng loại vải. </p>
+                                            <br>
+
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div class="product-tab-content">
-                                    <p>Khi hoàn thành mua sắm tại Website, đơn hàng sẽ lập tức được đóng gói và chuẩn bị
-                                        tiến hành giao hàng.</p>
-                                    <br>
-                                    <p>Hàng đặt sẽ được chuyển giao cho bên thứ ba và xác nhận sẽ được giao chậm nhất là
-                                        5 ngày cho một đơn hàng.</p>
-                                    <br>
-                                </div>
-
-                                <div class="product-tab-content">
-                                    <p>Chi tiết bảo quản sản phẩm:</p>
-                                    <br>
-                                    <p style="font-weight: bold;">* Các sản phẩm thuộc dòng cao cấp
-                                        (Senora) và áo khoác
-                                        (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.
-                                    </p>
-                                    <br>
-                                    <p>* Vải dệt kim: sau khi giặt sản phẩm phải được phơi ngang tránh
-                                        bai giãn.</p>
-                                    <br>
-                                    <p>* Vải voan, lụa, chiffon nên giặt bằng tay.</p>
-                                    <br>
-                                    <p>* Vải thô, tuytsi, kaki không có phối hay trang trí đá cườm thì
-                                        có thể giặt máy.
-                                    </p>
-                                    <br>
-                                    <p>* Vải thô, tuytsi, kaki có phối màu tương phản hay trang trí
-                                        voan, lụa, đá cườm
-                                        thì cần giặt tay.</p>
-                                    <br>
-                                    <p>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu
-                                        jeans. Nếu giặt thì
-                                        nên lộn trái sản phẩm khi giặt, đóng khuy, kéo khóa, không nên
-                                        giặt chung cùng
-                                        đồ sáng màu, tránh dính màu vào các sản phẩm khác. </p>
-                                    <br>
-                                    <p>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu,
-                                        phân biệt màu và
-                                        loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm
-                                        với xà phòng có
-                                        chất tẩy mạnh, nên giặt cùng xà phòng pha loãng.</p>
-                                    <br>
-                                    <p>* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt
-                                        nhẹ, vắt mức trung
-                                        bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi
-                                        giặt.</p>
-                                    <br>
-                                    <p>* Nên phơi sản phẩm tại chỗ thoáng mát, tránh ánh nắng trực tiếp
-                                        sẽ dễ bị phai
-                                        bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm gió sẽ
-                                        giữ màu vải tốt
-                                        hơn.</p>
-                                    <br>
-                                    <p>* Những chất vải 100% cotton, không nên phơi sản phẩm bằng mắc áo
-                                        mà nên vắt
-                                        ngang sản phẩm lên dây phơi để tránh tình trạng rạn vải.</p>
-                                    <br>
-                                    <p>* Khi ủi sản phẩm bằng bàn là và sử dụng chế độ hơi nước sẽ làm
-                                        cho sản phẩm dễ
-                                        ủi phẳng, mát và không bị cháy, giữ màu sản phẩm được đẹp và bền
-                                        lâu hơn. Nhiệt
-                                        độ của bàn là tùy theo từng loại vải. </p>
-                                    <br>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -409,36 +422,38 @@
             if ($id != $product->id && $i == $count){
                 echo '
                         <div class="col-12 col-lg-3 col-md-6 mb-3 mt-3">
-                        <div class="card h-100">';
+                        <a href="index.php?page=main&controller=detail&id=' . $product->id . '&action=index"
+                            class="card h-100 text-decoration-none">';
                         if ($product->sale) 
-                          echo  '<div class="badge bg-warning text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">SALE '. $product->sale .'%</div>';
+                          echo  '<div class="badge bg-dark text-light position-absolute" style="top: 0.5rem; right: 0.5rem">SALE '. $product->sale .'%</div>';
                               echo'  <!-- Product image-->
                     <img class="card-img-top" src="' . $product->img .'" alt="...">
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="product-name fw-bolder">' .$product->name . '</h5>
-                            <!-- Product price-->
-                            <span class="red">' . number_format($product->price*(100-$product->sale)/100, 0, ',', '.') .
-                                ' VNĐ</span></span> <span class="money-unit"></span>
-                            <br>
-                            <span class="text-muted text-decoration-line-through">' . number_format($product->price, 0,
-                                ',', '.') . ' VNĐ</span>
-                        </div>
-                        <!-- Rating -->
-                        <div class="star-block">
+                        <p class="product-name text-muted" style="font-size: 1em">' . $product->name .
+                        '</p>
+                    <span class="fw-bold">' . number_format($product->price * (100 -
+                        $product->sale) / 100, 0, ',', '.') . ' đ</span>
+                    <span class="text-muted text-decoration-line-through">' .
+                        number_format($product->price, 0, ',', '.') . ' đ</span>';
+
+                    if ($product->vote_number == 0) {
+                    echo '<p class="product-name text-muted" style="font-size: 1em">' .
+                        $product->vote_number . ' lượt đánh giá</p>';
+                    } else {
+                    echo '<p class="product-name text-muted" style="font-size: 1em">' .
+                        $product->vote_number . ' lượt đánh giá</p>
+                    <p class="product-name text-muted" style="font-size: 1em">' .
+                        $product->total_stars / $product->vote_number . ' đánh giá trung bình
+                    </p>';
+                    }
+
+                    echo '
                         </div>
 
                     </div>
-
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
-                                href="index.php?page=main&controller=detail&id='. $product->id .'&action=index">Xem
-                                thêm</a></div>
-                    </div>
-                </div>
+                </a>
             </div>';
             }
             }

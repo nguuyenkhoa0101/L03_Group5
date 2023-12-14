@@ -1,105 +1,159 @@
-<?php
-include_once('views/main/navbar.php');
+<?php 
+   include_once('views/main/navbar.php');
 ?>
+<main>
+    <style>
+    .card-img-top:hover {
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
 
-<style>
-.card:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-</style>
+    @media only screen and (max-width : 992px) {}
+
+    @media only screen and (max-width : 575px) {}
+
+    @media only screen and (max-width : 830px) {}
+
+    @media screen and (max-width: 540px) {
+        #advertisement-product {
+            margin-top: 120px;
+        }
+
+    }
+
+    .square-box {
+        background-color: white;
+        /* Gray background color */
+        padding: 20px;
+        /* Adjust padding as needed */
+        border-radius: 10px;
+        /* Optional: Add rounded corners */
+        height: 100%;
+        /* Ensures the box takes the full height of the parent container */
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+    <div class="container-fluid py-2" style="margin-top: 100px; background-color: #f6f6f6">
+        <div class="container">
+            <a href="index.php?page=main&controller=layouts&action=index" class="fw-bold me-2">Home</a>&nbsp;>
+            <a href="index.php?page=main&controller=womenproducts&action=index"
+                class=" fw-bold me-2">&nbsp;&nbsp;Sale</a>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 10px">
+        <div class="row">
+            <!-- Item 1 -->
+            <div class="col-md-4">
+                <div class="square-box">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <!-- Icon 1 -->
+                        <i class="bi bi-person" style="font-size: 3rem; color: #001f3f;"></i>
+                        <!-- Description 1 -->
+                        <p class="text-center">Sản phẩm của Routine đảm bảo chất lượng tốt nhất, với sự chọn lọc cẩn
+                            thận về
+                            chất liệu để mang đến trải nghiệm thoải mái và lâu dài.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col-md-4">
+                <div class="square-box">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <!-- Icon 2 -->
+                        <i class="bi bi-person" style="font-size: 3rem; color: #001f3f;"></i>
+                        <!-- Description 2 -->
+                        <p class="text-center">Routine tự hào về sự bền bỉ của sản phẩm, từ quy trình sản xuất đến
+                            chất liệu chọn lọc, để đảm bảo bạn luôn có quần áo đáng tin cậy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col-md-4">
+                <div class="square-box">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <!-- Icon 3 -->
+                        <i class="bi bi-person" style="font-size: 3rem; color: #001f3f;"></i>
+                        <!-- Description 3 -->
+                        <p class="text-center">Với quy trình kiểm soát chất lượng nghiêm ngặt, mỗi sản phẩm đều được
+                            đảm
+                            bảo vượt qua các tiêu chuẩn cao nhất, mang đến sự hài lòng cho khách hàng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<body>
+
     <!-- Items -->
-    <div class="container-fluid py-2" style="margin-top: 80px">
+    <div class="container-fluid py-2" style="margin-top: 10px">
         <div class="container-fluid px-4 px-lg-6 mt-4">
             <div style="display: flex; justify-content: flex-end; margin-top: 10px">
-                <select name="" id=""
-                    style="margin-left: auto; border-radius: 10px;  height: 30px; width: 300px; border-color: #ccc;">
-                    <option value="">Sắp xếp theo</option>
-                    <option value="">Giá cao đến thấp</option>
-                    <option value="">Giá thấp đến cao</option>
+                <select id="sortOption" name=""
+                    style="margin-left: auto; border-radius: 10px; height: 30px; width: 300px; border-color: #ccc;"
+                    onchange="sortProducts()">
+                    <option value="default">Sắp xếp theo</option>
+                    <option value="highToLow">Giá cao đến thấp</option>
+                    <option value="lowToHigh">Giá thấp đến cao</option>
                 </select>
+
             </div>
-            <div class="row" style="margin-top: 30px">
-
-                <!-- Bộ lọc bên trái -->
-                <div class="col-md-2 mb-3">
-                    <div class="filter-section">
-                        <h4>Filters</h4>
-                        <div class="filter">
-                            <label>Size</label>
-                            <div class="filter-option">
-                                <div class="filter-dropdown">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="small" id="size-small">
-                                        <label class="form-check-label" for="size-small">Small</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="medium" id="size-medium">
-                                        <label class="form-check-label" for="size-medium">Medium</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="large" id="size-large">
-                                        <label class="form-check-label" for="size-large">Large</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter">
-                            <label>Color</label>
-                            <div class="filter-option">
-                                <div class="filter-dropdown">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="red" id="color-red">
-                                        <label class="form-check-label" for="color-red">Red</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="blue" id="color-blue">
-                                        <label class="form-check-label" for="color-blue">Blue</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="green" id="color-green">
-                                        <label class="form-check-label" for="color-green">Green</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add additional filters here if needed -->
-                    </div>
-                </div>
-
-                <!-- Các card bên phải -->
-                <div class="col-md-10">
-                    <div id="card-content"
-                        class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
-                        <?php 
+            <div class="row" style="margin-top: 30px; padding-left: 60px">
+                <div id="card-content"
+                    class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
+                    <?php 
             // Lặp qua danh sách sản phẩm và hiển thị card
             foreach ($products as $product) {
-                if ($product->sale >= 30){
-                    echo '
-                        <div id="card" class="col mb-3">
-                            <a href="index.php?page=main&controller=detail&id='. $product->id .'&action=index" class="card h-100 text-decoration-none">
-                                <div class="badge bg-dark text-light position-absolute" style="top: 0.5rem; right: 0.5rem"> - '. $product->sale .'%</div>
-                                <img class="card-img-top" src="' . $product->img .'" alt="..."  style="height: 80%; width: auto;">
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <p class="product-name text-muted" style="font-size: 1em">' .$product->name . '</p>
-                                        <span class="fw-bold">' . number_format($product->price*(100-$product->sale)/100, 0, ',', '.') . ' đ</span> 
-                                        <span class="text-muted text-decoration-line-through">' . number_format($product->price, 0, ',', '.') . ' đ</span>
-                                    </div>
+                if($product->sale >= 30){
+                
+                echo '<div id="card" class="col mb-3">
+                        <a href="index.php?page=main&controller=detail&id=' . $product->id . '&action=index"
+                            class="card h-100 text-decoration-none">';
+
+                            if ($product->sale) {
+                            echo '<div class="badge bg-dark text-light position-absolute"
+                                style="top: 0.5rem; right: 0.5rem"> - ' . $product->sale . '%</div>';
+                            }
+
+                            echo '<img class="card-img-top" src="' . $product->img . '" alt="..."
+                                style="height: 80%; width: auto;">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <p class="product-name text-muted" style="font-size: 1em">' . $product->name .
+                                        '</p>
+                                    <span class="fw-bold">' . number_format($product->price * (100 -
+                                        $product->sale) / 100, 0, ',', '.') . ' đ</span>
+                                    <span class="text-muted text-decoration-line-through">' .
+                                        number_format($product->price, 0, ',', '.') . ' đ</span>';
+
+                                    if ($product->vote_number == 0) {
+                                    echo '<p class="product-name text-muted" style="font-size: 1em">' .
+                                        $product->vote_number . ' lượt đánh giá</p>';
+                                    } else {
+                                    echo '<p class="product-name text-muted" style="font-size: 1em">' .
+                                        $product->vote_number . ' lượt đánh giá</p>
+                                    <p class="product-name text-muted" style="font-size: 1em">' .
+                                        $product->total_stars / $product->vote_number . ' đánh giá trung bình
+                                    </p>';
+                                    }
+
+                                    echo '
                                 </div>
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><!-- Optional: Keep this div if you want to maintain the same structure --></div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <!-- Optional: Keep this div if you want to maintain the same structure -->
                                 </div>
-                            </a>
-                        </div>';
-                }
-            }
-        ?>
-                    </div>
+                            </div>
+                        </a>
+                    </div>';
+                    }}
+
+                    ?>
                 </div>
+
 
 
             </div>
@@ -120,6 +174,8 @@ include_once('views/main/navbar.php');
             </ul>
         </nav>
     </div>
+
+
 
     <script type="text/javascript">
     function getPageList(totalPages, page, maxLength) {
@@ -208,6 +264,25 @@ include_once('views/main/navbar.php');
         });
     });
     </script>
-    <?php
-include_once('views/main/footer.php');
+    <script>
+    function sortProducts() {
+        var sortOption = document.getElementById("sortOption");
+        var selectedValue = sortOption.value;
+
+        // Xử lý sự kiện khi lựa chọn giá trị
+        if (selectedValue === "highToLow") {
+            window.location.href = 'index.php?page=main&controller=womenproducts&action=sortByPriceHighToLow';
+        } else if (selectedValue === "lowToHigh") {
+            window.location.href = 'index.php?page=main&controller=womenproducts&action=sortByPriceLowToHigh';
+        }
+        // Các trường hợp sắp xếp khác nếu cần
+    }
+    </script>
+
+
+
+</main>
+
+<?php
+   include_once('views/main/footer.php');
 ?>
