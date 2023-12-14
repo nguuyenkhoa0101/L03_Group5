@@ -224,6 +224,6 @@ class ShoesproductsController extends BaseController
         unlink($urlcurrent2);
         unlink($urlcurrent3);
         Product::delete($id);
-        header('Location: index.php?page=admin&controller=womenproducts&action=index');
+        header('Location: index.php?page=admin&controller=shoesproducts&action=index');
     }
 }

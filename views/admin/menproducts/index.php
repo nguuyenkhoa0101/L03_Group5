@@ -23,14 +23,14 @@ require_once('views/admin/content_layouts.php'); ?>
             <div class="float-end">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Quản lý Sản phẩm Nữ</li>
+                    <li class="breadcrumb-item active">Quản lý Sản phẩm Nam</li>
                 </ol>
             </div>
         </div>
         <div class="container-fluid row">
             <div class="my-3">
                 <p class="row">
-                <h1 class="text-center">Quản lý Sản phẩm Nữ</h1>
+                <h1 class="text-center">Quản lý Sản phẩm Nam</h1>
                 </p>
             </div>
         </div>
