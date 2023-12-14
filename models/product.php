@@ -169,36 +169,36 @@ class Product
             ;");
         return $req;
     }
-    static function insertmen($name, $price, $description, $content, $img, $sale)
+    static function insertmen($name, $price, $description, $content, $img,$img1,$img2,$img3, $sale)
     {
  
         $db = DB::getInstance();
         $req = $db->query(
             " 
-            INSERT INTO product ( name , price , description , content , img , sale , vote_number , total_stars , typeid )
-            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale' ,'0' , '0' , '0')
+            INSERT INTO product ( name , price , description , content , img , img1 , img2 , img3 , sale , vote_number , total_stars , typeid )
+            VALUES ('$name', '$price', '$description', '$content', '$img', '$img1' , '$img2' , '$img3' ,'$sale' ,'0' , '0' , '0')
             ;");
         return $req;
     }
-    static function insertwomen($name, $price, $description, $content, $img, $sale)
+    static function insertwomen($name, $price, $description, $content, $img , $img1 , $img2 , $img3, $sale)
     {
  
         $db = DB::getInstance();
         $req = $db->query(
             " 
-            INSERT INTO product ( name , price , description , content , img , sale , vote_number , total_stars , typeid )
-            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale' ,'0' , '0' , '1')
+            INSERT INTO product ( name , price , description , content , img , img1 , img2 , img3 , sale , vote_number , total_stars , typeid )
+            VALUES ('$name', '$price', '$description', '$content', '$img', '$img1', '$img2', '$img3', '$sale' ,'0' , '0' , '1')
             ;");
         return $req;
     }
-    static function insertshoes($name, $price, $description, $content, $img, $sale)
+    static function insertshoes($name, $price, $description, $content, $img , $img1 , $img2 , $img3, $sale)
     {
  
         $db = DB::getInstance();
         $req = $db->query(
             " 
-            INSERT INTO product ( name , price , description , content , img , sale , vote_number , total_stars , typeid )
-            VALUES ('$name', '$price', '$description', '$content', '$img', '$sale' ,'0' , '0' , '2')
+            INSERT INTO product ( name , price , description , content , img , img1 , img2 , img3 , sale , vote_number , total_stars , typeid )
+            VALUES ('$name', '$price', '$description', '$content', '$img', '$img1', '$img2', '$img3', '$sale' ,'0' , '0' , '2')
             ;");
         return $req;
     }
@@ -210,13 +210,13 @@ class Product
         return $req;
     }
 
-    static function update($id, $name, $price, $description, $content, $img, $sale)
+    static function update($id, $name, $price, $description, $content, $img,$img1, $img2,$img3,$sale)
     {
         $db = DB::getInstance();
         $req = $db->query(
             "
                 UPDATE product
-                SET name = '$name', price = $price, description = '$description', content = '$content', img = '$img' , sale = '$sale'
+                SET name = '$name', price = $price, description = '$description', content = '$content', img = '$img' , img1 = '$img1' ,img2 = '$img2' ,img3 = '$img3' ,sale = '$sale'
                 WHERE id = $id ; 
             ;");
     }

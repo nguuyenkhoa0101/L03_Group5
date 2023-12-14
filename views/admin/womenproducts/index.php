@@ -60,6 +60,12 @@ require_once('views/admin/content_layouts.php'); ?>
                                             <div class="form-group"> <label>Mô tả</label> <textarea class="form-control my-2" name="description" rows="5" required></textarea></div>
                                             <div class="form-group"> <label>Nội dung</label> <textarea class="form-control my-2" name="content" rows="5" required></textarea></div>
                                             <div class="form-group"> <label>Hình ảnh </label>&nbsp <input class="form-control my-2" type="file" name="fileToUpload" id="fileToUpload" required/></div>
+                                            <div class="form-group"> <label>Hình ảnh phụ 1 </label>&nbsp <input class="form-control my-2" type="file" name="fileToUpload1" id="fileToUpload1" required/></div>
+
+                                            <div class="form-group"> <label>Hình ảnh phụ 2</label>&nbsp <input class="form-control my-2" type="file" name="fileToUpload2" id="fileToUpload2" required/></div>
+
+                                            <div class="form-group"> <label>Hình ảnh phụ 3</label>&nbsp <input class="form-control my-2" type="file" name="fileToUpload3" id="fileToUpload3" required/></div>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Đóng</button>
@@ -78,6 +84,9 @@ require_once('views/admin/content_layouts.php'); ?>
                                     <th scope="col" class="d-none d-lg-table-cell">Mô tả</th>
                                     <th scope="col" class="d-none d-lg-table-cell">Nội dung</th>
                                     <th scope="col">Hình ảnh</th>
+                                    <th scope="col">Hình ảnh phụ 1</th>
+                                    <th scope="col">Hình ảnh phụ 2</th>
+                                    <th scope="col">Hình ảnh phụ 3</th>
                                     <th scope="col">Thao tác</th>
                                 </tr>
                             </thead>
@@ -87,38 +96,59 @@ require_once('views/admin/content_layouts.php'); ?>
 
                                 $index = 1;
 
-                                foreach ($womenproducts as $womenproduct) {
+                                foreach ($womenproducts as $womenproduct) {  ?>
 
-                                    echo
-                                    "<tr class=\"text-center\">
-                                                    <td class=\"d-none d-lg-table-cell\">"
-                                        . $index .
-                                        "</td>
+                                    
+                                   
+                                    <tr class="text-center">
+                                                    <td class="d-none d-lg-table-cell">
+                                                    <?php  echo $index ; ?>
+                                                   </td>
                                                     <td>
-                                                       " . $womenproduct->name . "
+                                                    <?php  echo $womenproduct->name ; ?>  
                                                     </td>
-                                                    <td class=\"d-none d-lg-table-cell\">
-                                                      " .  $womenproduct->price . "
+                                                    <td class="d-none d-lg-table-cell">
+                                                    <?php  echo $womenproduct->price  ; ?>  
                                                     </td>
-                                                    <td class=\"d-none d-lg-table-cell\">
-                                                     " .  $womenproduct->description . "
+                                                    <td class="d-none d-lg-table-cell">
+                                                    <?php  echo  $womenproduct->description  ; ?>  
                                                     </td>
-                                                    <td class=\"d-none d-lg-table-cell\">
-                                                       " . str_replace(array("\r\n","\n\n","\n\r","\r\r", "\n", "\r"),'<br><br>',$womenproduct->content). "
+                                                    <td class="d-none d-lg-table-cell">
+                                                    <?php  echo  $womenproduct->content  ; ?>     
                                                     </td>
                                                     <td >
-                                                        <img style=\"width: 100px; height:100px;\" src='$womenproduct->img'>
+                                                        <img style="width: 100px; height:100px;" src=<?php echo $womenproduct->img ;?>>
                                                     </td>
+                                                    <td >
+                                                        <img style="width: 100px; height:100px;"  src=<?php echo $womenproduct->img1 ;?>>
+                                                    </td>
+                                                    <td >
+                                                        <img style="width: 100px; height:100px;"  src=<?php echo $womenproduct->img2 ;?>>
+                                                    </td>
+                                                    <td >
+                                                        <img style="width: 100px; height:100px;"  src=<?php echo $womenproduct->img3 ;?>>
+                                                    </td>
+                                                    
                                                     <td>
-                                                    <button class=\"btn-edit btn btn-primary btn-xs\" style=\"margin-right: 5px\" data-bs-id='$womenproduct->id' data-bs-name='$womenproduct->name' data-bs-price='$womenproduct->price' data-bs-description='$womenproduct->description' data-bs-content='$womenproduct->content' data-bs-sale='$womenproduct->sale' data-bs-img='$womenproduct->img' data-bs-target='#EditProductModal' data-bs-toggle='modal'><svg xmlns='http://www.w3.org/2000/svg' width='13' height='13' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+                                                    <button class="btn-edit btn btn-primary btn-xs" style="margin-right: 5px" data-bs-id= <?php echo $womenproduct->id ;?> data-bs-name=<?php echo $womenproduct->name ;?> data-bs-price=<?php echo $womenproduct->price ;?> data-bs-description=<?php echo $womenproduct->description ;?> data-bs-content=<?php echo $womenproduct->content ; ?> data-bs-sale=<?php echo $womenproduct->sale ;?> data-bs-img=<?php echo $womenproduct->img ;?> data-bs-target='#EditProductModal' data-bs-toggle='modal'><svg xmlns='http://www.w3.org/2000/svg' width='13' height='13' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
                                                     <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
                                                     <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
-                                                  </svg></button>
-                                                    <button class=\"btn-delete btn btn-danger btn-xs\" style=\"margin-right: 5px\" data-bs-id='$womenproduct->id' data-bs-target='#DeleteproductModal' data-bs-toggle='modal'><svg xmlns='http://www.w3.org/2000/svg' width='13' height='13' fill='currentColor' class='bi bi-trash3' viewBox='0 0 16 16'>
-                                                    <path d='M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z'/>
-                                                  </svg></button>
-                                                  </td>
-                                                </tr>";
+                                                  </svg></button> 
+
+                                                  <div>  
+                                                  <form  action="index.php?page=admin&controller=womenproducts&action=delete"  method="post">
+                                                  <div class="modal-body" style="margin-top:10px ;">
+                                                  <div class="col-12"> <input class="form-control my-2" type="hidden"  name="id" value = <?php echo $womenproduct->id ; ?> readonly /></div>
+                                                  </div>
+                                                  <div class="modal-foot"><button class="btn btn-primary formedit" type="submit">Xóa</button></div>
+                                                  </form>
+                                                  <div>  
+                                                  
+                                                  
+                                            
+                                                </td>
+                                                </tr>
+                                                <?php
                                                 $index++;
                                 }
                                 ?>
@@ -141,32 +171,20 @@ require_once('views/admin/content_layouts.php'); ?>
                                                 <div class="form-group"><label>Sale</label><input class="form-control my-2" type="number" placeholder="Sale" name="sale" required/></div>
                                                 <div class="form-group"> <label>Mô tả</label> <textarea class="form-control my-2" name="description" rows="5" required></textarea></div>
                                                 <div class="form-group"> <label>Nội dung</label> <textarea class="form-control my-2" name="content" rows="5" required></textarea></div>
-                                                <div class="form-group"><label>Url Hình ảnh </label><input class="form-control my-2" type="text" name="img" readonly /></div>
                                                 <div class="form-group"> <label> Hình ảnh </label>&nbsp <input type="file" class="form-control my-2" name="fileToUpload" id="fileToUpload"/></div>
+                                                <div class="form-group"> <label> Hình ảnh phụ 1 </label>&nbsp <input type="file" class="form-control my-2" name="fileToUpload1" id="fileToUpload1"/></div>
+                                                <div class="form-group"> <label> Hình ảnh phụ 2</label>&nbsp <input type="file" class="form-control my-2" name="fileToUpload2" id="fileToUpload2"/></div>
+                                                <div class="form-group"> <label> Hình ảnh phụ 3</label>&nbsp <input type="file" class="form-control my-2" name="fileToUpload3" id="fileToUpload3"/></div>
+
+                                            
+                                            
                                             </div>
                                             <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Đóng</button><button class="btn btn-primary formedit" type="submit">Chỉnh sửa</button></div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="DeleteProductModal" tabindex="-1" role="dialog" aria-labelledby="DeleteproductModal" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Xóa</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                                        </div>
-                                        <form action="index.php?page=admin&controller=womenproducts&action=delete" method="post">
-                                            <div class="modal-body">
-                                                <input class="form-control my-2" name="id" disabled/>
-                                                <p>Bạn có chắc chắn muốn xóa sản phẩm này?</p>
-                                            </div>
-                                            <div class="modal-footer"><button class="btn btn-danger btn-outline-light" type="button" data-bs-dismiss="modal">Đóng</button><button class="btn btn-danger btn-outline-light" type="submit">Xóa</button></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </table>
                     </div>
                 </div>
@@ -182,7 +200,7 @@ require_once('views/admin/content_layouts.php'); ?>
 
 <?php
 require_once('views/admin/footer.php'); ?>
-<script src="assets\javascripts\product\index.js"></script>
+<script src="assets/javascripts/product/index.js"></script>
 <!-- Add Javascript-->
 
 
